@@ -2835,14 +2835,7 @@ if st.session_state.page == "password":
         ">
 
         Before you enter, there's just one tiny problem...
-
-        <br><br>
-
         <b>You need the secret password.</b>
-
-        <br>
-
-        And no, I'm not telling you. 😌
 
         </p>
 
