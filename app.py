@@ -1651,6 +1651,10 @@ elif st.session_state.page == "wishes":
         st.session_state.wish_index
     ]
 
+    # --------------------------------------------------------
+    # SUBTITLE
+    # --------------------------------------------------------
+
     st.markdown(
         """
         <div class="subtitle">
@@ -1660,49 +1664,417 @@ elif st.session_state.page == "wishes":
         unsafe_allow_html=True
     )
 
+    # --------------------------------------------------------
+    # LANGUAGE-SPECIFIC BACKGROUNDS
+    # --------------------------------------------------------
 
-    # ========================================================
+    backgrounds = {
+
+        "Tamil":
+            "linear-gradient(135deg, #ff512f, #dd2476, #ff9966)",
+
+        "Telugu":
+            "linear-gradient(135deg, #ff8008, #ffc837, #ff5f6d)",
+
+        "Kannada":
+            "linear-gradient(135deg, #11998e, #38ef7d)",
+
+        "Malayalam":
+            "linear-gradient(135deg, #00b09b, #96c93d)",
+
+        "Hindi":
+            "linear-gradient(135deg, #f12711, #f5af19)",
+
+        "Bengali":
+            "linear-gradient(135deg, #c33764, #1d2671)",
+
+        "Marathi":
+            "linear-gradient(135deg, #ee0979, #ff6a00)",
+
+        "Punjabi":
+            "linear-gradient(135deg, #f7971e, #ffd200)",
+
+        "Gujarati":
+            "linear-gradient(135deg, #8e2de2, #4a00e0)",
+
+        "English":
+            "linear-gradient(135deg, #fc466b, #3f5efb, #00c6ff)",
+
+        "French":
+            "linear-gradient(135deg, #a18cd1, #fbc2eb)",
+
+        "Japanese":
+            "linear-gradient(135deg, #ff9a9e, #fad0c4)",
+
+        "Korean":
+            "linear-gradient(135deg, #667eea, #764ba2)",
+
+        "Spanish":
+            "linear-gradient(135deg, #ff416c, #ff4b2b)",
+
+        "Italian":
+            "linear-gradient(135deg, #56ab2f, #a8e063)",
+
+        "German":
+            "linear-gradient(135deg, #232526, #414345, #f7971e)",
+
+        "Portuguese":
+            "linear-gradient(135deg, #00c6ff, #0072ff)",
+
+        "Chinese":
+            "linear-gradient(135deg, #ff0844, #ffb199)",
+
+        "Arabic":
+            "linear-gradient(135deg, #141e30, #243b55)",
+
+        "Turkish":
+            "linear-gradient(135deg, #ed213a, #93291e)",
+
+        "Russian":
+            "linear-gradient(135deg, #2193b0, #6dd5ed)",
+
+        "Greek":
+            "linear-gradient(135deg, #36d1dc, #5b86e5)",
+
+        "Dutch":
+            "linear-gradient(135deg, #f953c6, #b91d73)",
+
+        "Swedish":
+            "linear-gradient(135deg, #4facfe, #00f2fe)",
+
+        "Thai":
+            "linear-gradient(135deg, #ff758c, #ff7eb3)",
+
+        "Vietnamese":
+            "linear-gradient(135deg, #f83600, #f9d423)",
+
+        "Indonesian":
+            "linear-gradient(135deg, #00b09b, #96c93d)",
+
+        "Filipino":
+            "linear-gradient(135deg, #12c2e9, #c471ed)",
+
+        "Latin":
+            "linear-gradient(135deg, #8360c3, #2ebf91)",
+
+        "Irish":
+            "linear-gradient(135deg, #11998e, #38ef7d)"
+    }
+
+    background = backgrounds.get(
+        current["language"],
+        "linear-gradient(135deg, #667eea, #764ba2)"
+    )
+
+    # --------------------------------------------------------
     # IMPORTANT:
-    # The multilingual text is rendered directly as HTML.
-    # It is NOT placed inside a code block.
-    # ========================================================
+    # USE st.html() FOR THIS CARD.
+    # This prevents Streamlit Cloud from displaying the HTML
+    # source instead of rendering it.
+    # --------------------------------------------------------
 
-    st.markdown(
+    st.html(
         f"""
-        <div class="wish-card {current["theme"]}">
+        <style>
 
-            <div class="destination">
+        .birthday-wish-card {{
+            min-height: 430px;
+
+            border-radius: 35px;
+
+            padding: 55px 30px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            border: 1px solid rgba(255,255,255,0.30);
+
+            background: {background};
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.35),
+                0 0 45px rgba(255,130,200,0.18);
+
+            animation:
+                birthdayWishAppear 0.75s ease;
+
+            position: relative;
+
+            overflow: hidden;
+
+            box-sizing: border-box;
+        }}
+
+
+        .birthday-wish-card::before {{
+
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+
+            height: 250px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.13);
+
+            filter: blur(12px);
+
+            top: -130px;
+
+            right: -100px;
+        }}
+
+
+        .birthday-wish-card::after {{
+
+            content: "";
+
+            position: absolute;
+
+            width: 200px;
+
+            height: 200px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.10);
+
+            filter: blur(12px);
+
+            bottom: -100px;
+
+            left: -80px;
+        }}
+
+
+        .birthday-destination {{
+
+            font-family:
+                'Quicksand',
+                'Noto Sans',
+                sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: rgba(255,255,255,0.82);
+
+            margin-bottom: 22px;
+
+            position: relative;
+
+            z-index: 2;
+        }}
+
+
+        .birthday-language {{
+
+            font-family:
+                'Quicksand',
+                'Noto Sans',
+                sans-serif;
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            color: rgba(255,255,255,0.95);
+
+            margin-bottom: 22px;
+
+            position: relative;
+
+            z-index: 2;
+        }}
+
+
+        .birthday-wish-emoji {{
+
+            font-size: 76px;
+
+            line-height: 1;
+
+            margin-bottom: 28px;
+
+            position: relative;
+
+            z-index: 2;
+
+            animation:
+                birthdayEmojiFloat 2.5s ease-in-out infinite;
+        }}
+
+
+        .birthday-wish-text {{
+
+            font-family:
+                'Noto Sans',
+                'Noto Sans Devanagari',
+                'Noto Sans Telugu',
+                'Noto Sans Kannada',
+                'Noto Sans Malayalam',
+                'Noto Sans Bengali',
+                'Noto Sans Tamil',
+                sans-serif;
+
+            font-size: 36px;
+
+            font-weight: 800;
+
+            line-height: 1.55;
+
+            color: white;
+
+            text-shadow:
+                0 4px 20px rgba(0,0,0,0.25);
+
+            margin-bottom: 22px;
+
+            position: relative;
+
+            z-index: 2;
+
+            word-break: normal;
+
+            white-space: normal;
+        }}
+
+
+        .birthday-wish-subtitle {{
+
+            font-family:
+                'Quicksand',
+                sans-serif;
+
+            font-size: 20px;
+
+            font-style: italic;
+
+            color: rgba(255,255,255,0.92);
+
+            position: relative;
+
+            z-index: 2;
+        }}
+
+
+        @keyframes birthdayWishAppear {{
+
+            0% {{
+
+                opacity: 0;
+
+                transform:
+                    scale(0.85)
+                    translateY(25px);
+            }}
+
+            100% {{
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+            }}
+        }}
+
+
+        @keyframes birthdayEmojiFloat {{
+
+            0%, 100% {{
+
+                transform:
+                    translateY(0)
+                    rotate(-3deg);
+            }}
+
+            50% {{
+
+                transform:
+                    translateY(-10px)
+                    rotate(3deg);
+            }}
+        }}
+
+
+        @media (max-width: 600px) {{
+
+            .birthday-wish-card {{
+
+                min-height: 390px;
+
+                padding: 40px 18px;
+            }}
+
+            .birthday-wish-text {{
+
+                font-size: 27px;
+
+                line-height: 1.55;
+            }}
+
+            .birthday-wish-emoji {{
+
+                font-size: 62px;
+            }}
+
+            .birthday-language {{
+
+                font-size: 18px;
+            }}
+
+        }}
+
+        </style>
+
+
+        <div class="birthday-wish-card">
+
+            <div class="birthday-destination">
                 🌍 DESTINATION
             </div>
 
-            <div class="wish-language">
+            <div class="birthday-language">
                 {current["language"]}
             </div>
 
-            <div class="wish-emoji">
+            <div class="birthday-wish-emoji">
                 {current["emoji"]}
             </div>
 
-            <div class="wish-text">
+            <div class="birthday-wish-text">
                 {current["wish"]}
             </div>
 
-            <div class="wish-subtitle">
+            <div class="birthday-wish-subtitle">
                 {current["subtitle"]}
             </div>
 
         </div>
-        """,
-        unsafe_allow_html=True
+        """
     )
-
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-
-    # ========================================================
-    # NEXT
-    # ========================================================
+    # --------------------------------------------------------
+    # NEXT BUTTON
+    # --------------------------------------------------------
 
     if st.session_state.wish_index < len(wishes) - 1:
 
@@ -1719,6 +2091,66 @@ elif st.session_state.page == "wishes":
             st.session_state.page = "final_intro"
 
             st.rerun()
+
+
+    # # ========================================================
+    # # IMPORTANT:
+    # # The multilingual text is rendered directly as HTML.
+    # # It is NOT placed inside a code block.
+    # # ========================================================
+
+    # st.markdown(
+    #     f"""
+    #     <div class="wish-card {current["theme"]}">
+
+    #         <div class="destination">
+    #             🌍 DESTINATION
+    #         </div>
+
+    #         <div class="wish-language">
+    #             {current["language"]}
+    #         </div>
+
+    #         <div class="wish-emoji">
+    #             {current["emoji"]}
+    #         </div>
+
+    #         <div class="wish-text">
+    #             {current["wish"]}
+    #         </div>
+
+    #         <div class="wish-subtitle">
+    #             {current["subtitle"]}
+    #         </div>
+
+    #     </div>
+    #     """,
+    #     unsafe_allow_html=True
+    # )
+
+
+    # st.markdown("<br>", unsafe_allow_html=True)
+
+
+    # # ========================================================
+    # # NEXT
+    # # ========================================================
+
+    # if st.session_state.wish_index < len(wishes) - 1:
+
+    #     if st.button("Next 🌍"):
+
+    #         st.session_state.wish_index += 1
+
+    #         st.rerun()
+
+    # else:
+
+    #     if st.button("✨ One last thing..."):
+
+    #         st.session_state.page = "final_intro"
+
+    #         st.rerun()
 
 
 # ============================================================
