@@ -2213,6 +2213,111 @@ elif st.session_state.page == "final_intro":
         st.rerun()
 
 
+# # ============================================================
+# # FINAL BIRTHDAY MESSAGE
+# # ============================================================
+
+# elif st.session_state.page == "final":
+
+#     # ========================================================
+#     # NEW CELEBRATION:
+#     # FLOWERS + SHINES INSTEAD OF BALLOONS
+#     # ========================================================
+
+#     st.markdown(
+#         """
+#         <div class="celebration">
+
+#             <span class="c1">🌸</span>
+#             <span class="c2">✨</span>
+#             <span class="c3">🌷</span>
+#             <span class="c4">✨</span>
+#             <span class="c5">🌺</span>
+#             <span class="c6">✨</span>
+#             <span class="c7">🌼</span>
+#             <span class="c8">✨</span>
+#             <span class="c9">🌸</span>
+#             <span class="c10">🌷</span>
+
+#         </div>
+#         """,
+#         unsafe_allow_html=True
+#     )
+
+
+#     st.markdown(
+#         """
+#         <div class="final-card">
+
+#         <div class="big-emoji">
+#         🎂🌸✨
+#         </div>
+
+#         <div class="final-title">
+#         HAPPY BIRTHDAY, TEJESH✨!!
+#         </div>
+
+#         <div class="final-message">
+
+#         Naa nenachikooda paakala, ivlo seekram naa oruthara trust pannuven, ennaiye kudupen nu..
+#         Unga ella journey layum naa irukanum nu asaipaduren..❤️
+#         No matter what, ungala ennaikkum eppavum vittukudukka maaten..
+#         <br>
+#         <b>You are a GEM.</b>
+        
+#         <br>
+
+#         I will try my best to make you feel special and happy..
+#         Sometimes mudiyadhu but that's okay, ellame part of life dhana..
+#         <br>
+#         I hope this year (or maybe I) will bring you wonderful memories, exciting things, and plenty of reasons to be happy.
+
+#         <br>
+
+#         Have a really, really wonderful birthday. ❤️
+
+#         <br>
+#         And don't forget to ask for your birthday gift from the person standing/sitting right in front of you!!
+
+#         <br>
+
+#         <b>Enjoy your life, Brightuuuu! 🎂✨</b>
+        
+#         </div>
+
+#         </div>
+#         """,
+#         unsafe_allow_html=True
+#     )
+
+#     st.markdown("<br>", unsafe_allow_html=True)
+
+#     # ========================================================
+#     # NO "ALL WISHES TOGETHER" SECTION
+#     # ========================================================
+
+#     st.markdown(
+#         """
+#         <div style="
+#             text-align:center;
+#             margin-top:30px;
+#             color:#efd5e3;
+#             font-size:16px;
+#             line-height:1.8;
+#         ">
+
+#         🌸 Some wishes are better left as little memories. ✨
+
+#         <br>
+
+#         And this one was meant just for you.
+
+#         </div>
+#         """,
+#         unsafe_allow_html=True
+#     )
+
+
 # ============================================================
 # FINAL BIRTHDAY MESSAGE
 # ============================================================
@@ -2224,8 +2329,78 @@ elif st.session_state.page == "final":
     # FLOWERS + SHINES INSTEAD OF BALLOONS
     # ========================================================
 
-    st.markdown(
+    st.html(
         """
+        <style>
+
+        .celebration {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 999999;
+            overflow: hidden;
+        }
+
+        .celebration span {
+            position: absolute;
+            top: -70px;
+            font-size: 26px;
+            opacity: 0;
+            animation: celebrationFall 5s linear infinite;
+        }
+
+        .c1  { left: 4%;  animation-delay: 0s; }
+        .c2  { left: 13%; animation-delay: 0.7s; }
+        .c3  { left: 23%; animation-delay: 1.5s; }
+        .c4  { left: 34%; animation-delay: 0.3s; }
+        .c5  { left: 45%; animation-delay: 1.9s; }
+        .c6  { left: 57%; animation-delay: 0.9s; }
+        .c7  { left: 68%; animation-delay: 2.2s; }
+        .c8  { left: 78%; animation-delay: 1.2s; }
+        .c9  { left: 88%; animation-delay: 2.7s; }
+        .c10 { left: 96%; animation-delay: 1.7s; }
+
+        @keyframes celebrationFall {
+
+            0% {
+                transform:
+                    translateY(-80px)
+                    rotate(0deg)
+                    scale(0.7);
+                opacity: 0;
+            }
+
+            12% {
+                opacity: 0.9;
+            }
+
+            50% {
+                transform:
+                    translateY(50vh)
+                    translateX(30px)
+                    rotate(180deg)
+                    scale(1.1);
+                opacity: 0.85;
+            }
+
+            85% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform:
+                    translateY(115vh)
+                    translateX(-25px)
+                    rotate(360deg)
+                    scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        </style>
+
         <div class="celebration">
 
             <span class="c1">🌸</span>
@@ -2240,8 +2415,7 @@ elif st.session_state.page == "final":
             <span class="c10">🌷</span>
 
         </div>
-        """,
-        unsafe_allow_html=True
+        """
     )
 
 
