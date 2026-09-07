@@ -1171,10 +1171,10 @@
 
 
 # # ============================================================
-# # PASSWORD PAGE
+# #  PAGE
 # # ============================================================
 
-# if st.session_state.page == "password":
+# if st.session_state.page == "":
 
 #     st.markdown(
 #         '<div class="main-title">✨ Something Made Just For You ✨</div>',
@@ -1209,7 +1209,7 @@
 #         ">
 
 #         Before you enter, there's just one tiny problem...
-#         <b>You need the secret password.</b>
+#         <b>You need the secret .</b>
 
 #         </p>
 
@@ -1218,7 +1218,7 @@
 #         unsafe_allow_html=True
 #     )
 
-#     password = st.text_input(
+#      = st.text_input(
 #         "Enter the secret password",
 #         type="password",
 #         placeholder="Enter password..."
@@ -2319,7 +2319,7 @@ st.set_page_config(
 # SECRET INFORMATION
 # ============================================================
 
-PASSWORD = "T20080209T"
+PASSWORD = "T20080209S"
 
 # ============================================================
 # SESSION STATE
