@@ -2356,6 +2356,7 @@ wishes = [
     # ========================================================
 
     {
+        "language": "Tamil",
         "place": "Tamil Nadu",
         "wish": "இனிய பிறந்தநாள் வாழ்த்துக்கள்!",
         "subtitle": "Iniya pirandhanaal vaazhthukkal!",
