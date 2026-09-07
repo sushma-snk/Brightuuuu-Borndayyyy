@@ -2649,8 +2649,8 @@ funny_messages = [
 
     {
         "emoji": "🤦‍♀️",
-        "title": "But obviously...",
-        "message": "That would have been far too normal for me."
+        "title": "But obviously you know me...",
+        "message": "That would have been far too normal."
     },
 
     {
@@ -2666,15 +2666,8 @@ funny_messages = [
     },
 
     {
-        "emoji": "❤️",
-        "title": "But seriously...",
-        "message": "I wanted to make your birthday a little different."
-    },
-
-    {
         "emoji": "✨",
         "title": "So here we go...",
-        "message": "A little birthday wish, from a lot of different places."
     }
 ]
 
