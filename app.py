@@ -1271,7 +1271,7 @@
 
 #             <br><br>
 
-#             It contains exactly <b>2 letters/characters</b>
+#             It contains  <b>2 letters/characters</b>
 #             and <b>8 digits</b>.
 
 #             I know you got it. 😌
@@ -1411,7 +1411,7 @@
 #             Okayyy... I'm impressed. 👏😂
 
 #             <span style="font-size:19px;">
-#             That's exactly how I wanted you to enter.
+#             That's  how I wanted you to enter.
 #             </span>
 
 #             <br><br>
@@ -3598,10 +3598,10 @@ if st.session_state.page == "password":
 
             <br><br>
 
-            It contains exactly <b>2 letters/characters</b>
+            It contains <b>2 letters/characters</b>
             and <b>8 digits</b>.
 
-            I know you got it. 😌
+            I know you guessed it. 😌
 
             </div>
             """,
@@ -3623,7 +3623,7 @@ if st.session_state.page == "password":
 
             <br><br>
 
-            Seriously!! You want the second hint. Thats bad!!. 👀
+            Seriously!! You want the second hint?? Thats bad!!. 👀
 
             <b> Laptop PIN.</b> 💻
 
@@ -3728,20 +3728,14 @@ elif st.session_state.page == "entry_reaction":
             <div class="reaction">
 
             <b>WAITTTT... YOU GOT IT?!</b>
-
-            <br><br>
-
-            No hints?!
-
             <br>
-
+            No hints?!
+            <br>
             Okayyy... I'm impressed. 👏😂
-
             <span style="font-size:19px;">
             That's exactly how I wanted you to enter.
             </span>
-
-            <br><br>
+            <br>
 
             <b>Welcome, Brightuuuu!! ❤️</b>
 
