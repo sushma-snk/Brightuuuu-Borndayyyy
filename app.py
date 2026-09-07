@@ -2905,12 +2905,12 @@ if st.session_state.page == "password":
 
             <br><br>
 
-            It contains exactly <b>6 letters/characters</b>
-            and <b>4 digits</b>.
+            It contains exactly <b>2 letters/characters</b>
+            and <b>8 digits</b>.
 
             <br><br>
 
-            That's all you're getting from me. 😌
+            I know you got it. 😌
 
             </div>
             """,
@@ -2932,12 +2932,11 @@ if st.session_state.page == "password":
 
             <br><br>
 
-            Think about the number you use to unlock
-            something very close to you every day. 👀
+            Seriously!! You want the second hint. Thats bad!!. 👀
 
             <br><br>
 
-            <b>Your laptop PIN.</b> 💻
+            <b> Laptop PIN.</b> 💻
 
             </div>
             """,
@@ -3207,11 +3206,7 @@ elif st.session_state.page == "welcome":
 
         I could have just typed
 
-        <br>
-
         <b>"Happy Birthday!"</b>
-
-        <br><br>
 
         and sent it to you.
 
