@@ -2908,8 +2908,6 @@ if st.session_state.page == "password":
             It contains exactly <b>2 letters/characters</b>
             and <b>8 digits</b>.
 
-            <br><br>
-
             I know you got it. 😌
 
             </div>
@@ -2934,8 +2932,6 @@ if st.session_state.page == "password":
 
             Seriously!! You want the second hint. Thats bad!!. 👀
 
-            <br><br>
-
             <b> Laptop PIN.</b> 💻
 
             </div>
@@ -2953,9 +2949,6 @@ if st.session_state.page == "password":
             ">
 
             Okay... you have used BOTH hints.
-
-            <br>
-
             I'm slightly disappointed now. 😑😂
 
             </div>
@@ -3051,8 +3044,6 @@ elif st.session_state.page == "entry_reaction":
 
             Okayyy... I'm impressed. 👏😂
 
-            <br><br>
-
             <span style="font-size:19px;">
             That's exactly how I wanted you to enter.
             </span>
@@ -3091,11 +3082,7 @@ elif st.session_state.page == "entry_reaction":
 
             You needed one hint.
 
-            <br>
-
             I'll allow it. 😌
-
-            <br><br>
 
             At least you figured it out.
 
@@ -3133,16 +3120,10 @@ elif st.session_state.page == "entry_reaction":
 
             You used BOTH hints?!
 
-            <br><br>
-
             I literally gave you two clues
             and you still made me do all the work. 😂
 
-            <br><br>
-
             I'm mildly offended.
-
-            <br><br>
 
             But fine...
 
@@ -3204,19 +3185,11 @@ elif st.session_state.page == "welcome":
             line-height:1.9;
         ">
 
-        I could have just typed
-
-        <b>"Happy Birthday!"</b>
-
-        and sent it to you.
+        I could have just typed "Happy Birthday!" and sent it to you.
 
         <br><br>
 
-        But apparently...
-
-        <br>
-
-        <b>that was not enough. 😂</b>
+        But apparently that was not enough. 😂
 
         <br><br>
 
