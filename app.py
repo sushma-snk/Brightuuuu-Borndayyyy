@@ -1,22 +1,22 @@
 import streamlit as st
-import time
 
 # ============================================================
 # PAGE CONFIG
 # ============================================================
 
 st.set_page_config(
-    page_title="For Brightuuuu ❤️",
+    page_title="A Birthday Surprise for Brightuuuu",
     page_icon="🎂",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
 
 # ============================================================
-# SECRET INFORMATION
+# SECRET PASSWORD
 # ============================================================
 
 PASSWORD = "T20080209S"
+
 
 # ============================================================
 # SESSION STATE
@@ -38,306 +38,292 @@ for key, value in defaults.items():
 
 
 # ============================================================
-# BIRTHDAY WISHES
-# ============================================================
-# Each entry contains:
-# language
-# wish
-# English subtitle
-# emoji
-# theme class
+# 29 LANGUAGE WISHES
 #
-# The actual number of wishes is intentionally not displayed.
+# ORDER:
+# 1. Tamil
+# 2. Telugu
+# 3. Kannada
+# 4. Malayalam
+# 5-9. North Indian languages
+# 10 onwards. Other countries
+#
+# No number is shown to Brightuuuu.
 # ============================================================
 
 wishes = [
 
-    {
-        "language": "English",
-        "wish": "Happy Birthday! 🎂",
-        "subtitle": "Wishing you a wonderful birthday!",
-        "emoji": "🎂",
-        "theme": "theme-birthday"
-    },
-
-    {
-        "language": "French",
-        "wish": "Joyeux anniversaire !",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🗼",
-        "theme": "theme-paris"
-    },
-
-    {
-        "language": "Japanese",
-        "wish": "お誕生日おめでとう！",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🌸",
-        "theme": "theme-japan"
-    },
-
-    {
-        "language": "Korean",
-        "wish": "생일 축하해요!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🌙",
-        "theme": "theme-korea"
-    },
-
-    {
-        "language": "Spanish",
-        "wish": "¡Feliz cumpleaños!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🎉",
-        "theme": "theme-fiesta"
-    },
-
-    {
-        "language": "Italian",
-        "wish": "Buon compleanno!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🍕",
-        "theme": "theme-italy"
-    },
-
-    {
-        "language": "German",
-        "wish": "Alles Gute zum Geburtstag!",
-        "subtitle": "All the best for your birthday!",
-        "emoji": "🏰",
-        "theme": "theme-germany"
-    },
-
-    {
-        "language": "Portuguese",
-        "wish": "Feliz aniversário!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🌊",
-        "theme": "theme-portugal"
-    },
-
-    {
-        "language": "Chinese",
-        "wish": "生日快乐！",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🏮",
-        "theme": "theme-china"
-    },
-
-    {
-        "language": "Arabic",
-        "wish": "عيد ميلاد سعيد!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🌙",
-        "theme": "theme-arabic"
-    },
-
-    {
-        "language": "Hindi",
-        "wish": "जन्मदिन मुबारक हो!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🪷",
-        "theme": "theme-india"
-    },
-
-    {
-        "language": "Kannada",
-        "wish": "ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🌿",
-        "theme": "theme-karnataka"
-    },
+    # --------------------------------------------------------
+    # SOUTH INDIA
+    # --------------------------------------------------------
 
     {
         "language": "Tamil",
         "wish": "இனிய பிறந்தநாள் வாழ்த்துக்கள்!",
-        "subtitle": "Happy Birthday!",
+        "english": "Happy Birthday!",
         "emoji": "🌺",
-        "theme": "theme-tamil"
+        "background": "linear-gradient(135deg, #ff512f, #dd2476, #ff9966)",
+        "accent": "#ffd166"
     },
 
     {
         "language": "Telugu",
         "wish": "పుట్టినరోజు శుభాకాంక్షలు!",
-        "subtitle": "Happy Birthday!",
+        "english": "Happy Birthday!",
         "emoji": "🌼",
-        "theme": "theme-telugu"
+        "background": "linear-gradient(135deg, #ff8008, #ffc837, #ff5f6d)",
+        "accent": "#fff3a3"
+    },
+
+    {
+        "language": "Kannada",
+        "wish": "ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು!",
+        "english": "Happy Birthday!",
+        "emoji": "🌿",
+        "background": "linear-gradient(135deg, #11998e, #38ef7d, #a8e063)",
+        "accent": "#fff6a3"
     },
 
     {
         "language": "Malayalam",
         "wish": "ജന്മദിനാശംസകൾ!",
-        "subtitle": "Happy Birthday!",
+        "english": "Happy Birthday!",
         "emoji": "🌴",
-        "theme": "theme-kerala"
+        "background": "linear-gradient(135deg, #00b09b, #96c93d, #00c9a7)",
+        "accent": "#fff5b7"
+    },
+
+    # --------------------------------------------------------
+    # NORTH / OTHER INDIAN LANGUAGES
+    # --------------------------------------------------------
+
+    {
+        "language": "Hindi",
+        "wish": "जन्मदिन मुबारक हो!",
+        "english": "Happy Birthday!",
+        "emoji": "🪷",
+        "background": "linear-gradient(135deg, #f12711, #f5af19, #ff512f)",
+        "accent": "#fff0a8"
     },
 
     {
         "language": "Bengali",
         "wish": "শুভ জন্মদিন!",
-        "subtitle": "Happy Birthday!",
+        "english": "Happy Birthday!",
         "emoji": "🌸",
-        "theme": "theme-bengal"
+        "background": "linear-gradient(135deg, #c33764, #1d2671, #6a3093)",
+        "accent": "#ffd6f6"
     },
 
     {
         "language": "Marathi",
         "wish": "वाढदिवसाच्या हार्दिक शुभेच्छा!",
-        "subtitle": "Heartfelt birthday wishes!",
-        "emoji": "🪔",
-        "theme": "theme-marathi"
+        "english": "Heartfelt birthday wishes!",
+        "emoji": "🌻",
+        "background": "linear-gradient(135deg, #ee0979, #ff6a00, #f7971e)",
+        "accent": "#fff0a0"
     },
 
     {
         "language": "Punjabi",
         "wish": "ਜਨਮਦਿਨ ਮੁਬਾਰਕ!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🥁",
-        "theme": "theme-punjab"
+        "english": "Happy Birthday!",
+        "emoji": "🌼",
+        "background": "linear-gradient(135deg, #f7971e, #ffd200, #ff512f)",
+        "accent": "#fff5b0"
+    },
+
+    {
+        "language": "Gujarati",
+        "wish": "જન્મદિવસની શુભેચ્છાઓ!",
+        "english": "Happy Birthday!",
+        "emoji": "🌺",
+        "background": "linear-gradient(135deg, #8e2de2, #4a00e0, #ff00cc)",
+        "accent": "#ffe3ff"
+    },
+
+    # --------------------------------------------------------
+    # OTHER COUNTRIES
+    # --------------------------------------------------------
+
+    {
+        "language": "English",
+        "wish": "Happy Birthday!",
+        "english": "Wishing you a wonderful birthday!",
+        "emoji": "🎂",
+        "background": "linear-gradient(135deg, #fc466b, #3f5efb, #00c6ff)",
+        "accent": "#ffffff"
+    },
+
+    {
+        "language": "French",
+        "wish": "Joyeux anniversaire !",
+        "english": "Happy Birthday!",
+        "emoji": "🌷",
+        "background": "linear-gradient(135deg, #a18cd1, #fbc2eb, #fad0c4)",
+        "accent": "#ffffff"
+    },
+
+    {
+        "language": "Spanish",
+        "wish": "¡Feliz cumpleaños!",
+        "english": "Happy Birthday!",
+        "emoji": "🌺",
+        "background": "linear-gradient(135deg, #ff416c, #ff4b2b, #ff9068)",
+        "accent": "#fff6a3"
+    },
+
+    {
+        "language": "Italian",
+        "wish": "Buon compleanno!",
+        "english": "Happy Birthday!",
+        "emoji": "🌿",
+        "background": "linear-gradient(135deg, #56ab2f, #a8e063, #11998e)",
+        "accent": "#ffffc2"
+    },
+
+    {
+        "language": "German",
+        "wish": "Alles Gute zum Geburtstag!",
+        "english": "All the best for your birthday!",
+        "emoji": "🌼",
+        "background": "linear-gradient(135deg, #232526, #414345, #f7971e)",
+        "accent": "#ffe99c"
+    },
+
+    {
+        "language": "Portuguese",
+        "wish": "Feliz aniversário!",
+        "english": "Happy Birthday!",
+        "emoji": "🌊",
+        "background": "linear-gradient(135deg, #00c6ff, #0072ff, #00f2fe)",
+        "accent": "#dfffff"
+    },
+
+    {
+        "language": "Chinese",
+        "wish": "生日快乐！",
+        "english": "Happy Birthday!",
+        "emoji": "🌸",
+        "background": "linear-gradient(135deg, #ff0844, #ffb199, #ff416c)",
+        "accent": "#fff0a8"
+    },
+
+    {
+        "language": "Japanese",
+        "wish": "お誕生日おめでとう！",
+        "english": "Happy Birthday!",
+        "emoji": "🌸",
+        "background": "linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb)",
+        "accent": "#ffffff"
+    },
+
+    {
+        "language": "Korean",
+        "wish": "생일 축하해요!",
+        "english": "Happy Birthday!",
+        "emoji": "✨",
+        "background": "linear-gradient(135deg, #667eea, #764ba2, #a18cd1)",
+        "accent": "#f9e8ff"
+    },
+
+    {
+        "language": "Arabic",
+        "wish": "عيد ميلاد سعيد!",
+        "english": "Happy Birthday!",
+        "emoji": "🌙",
+        "background": "linear-gradient(135deg, #141e30, #243b55, #8360c3)",
+        "accent": "#ffe89b"
     },
 
     {
         "language": "Turkish",
         "wish": "Doğum günün kutlu olsun!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🕌",
-        "theme": "theme-turkey"
+        "english": "Happy Birthday!",
+        "emoji": "🌷",
+        "background": "linear-gradient(135deg, #ed213a, #93291e, #ff416c)",
+        "accent": "#ffd7e0"
     },
 
     {
         "language": "Russian",
         "wish": "С днём рождения!",
-        "subtitle": "Happy Birthday!",
+        "english": "Happy Birthday!",
         "emoji": "❄️",
-        "theme": "theme-russia"
+        "background": "linear-gradient(135deg, #2193b0, #6dd5ed, #7f7fd5)",
+        "accent": "#e8fbff"
     },
 
     {
         "language": "Greek",
         "wish": "Χρόνια πολλά!",
-        "subtitle": "Many happy returns!",
-        "emoji": "🏛️",
-        "theme": "theme-greece"
+        "english": "Many happy returns!",
+        "emoji": "🌊",
+        "background": "linear-gradient(135deg, #36d1dc, #5b86e5, #00c6ff)",
+        "accent": "#ffffff"
     },
 
     {
         "language": "Dutch",
         "wish": "Gefeliciteerd met je verjaardag!",
-        "subtitle": "Congratulations on your birthday!",
+        "english": "Congratulations on your birthday!",
         "emoji": "🌷",
-        "theme": "theme-netherlands"
+        "background": "linear-gradient(135deg, #f953c6, #b91d73, #ff6a88)",
+        "accent": "#ffe6f5"
     },
 
     {
         "language": "Swedish",
         "wish": "Grattis på födelsedagen!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "❄️",
-        "theme": "theme-sweden"
+        "english": "Happy Birthday!",
+        "emoji": "✨",
+        "background": "linear-gradient(135deg, #4facfe, #00f2fe, #43e97b)",
+        "accent": "#ffffff"
     },
 
     {
         "language": "Thai",
         "wish": "สุขสันต์วันเกิด!",
-        "subtitle": "Happy Birthday!",
+        "english": "Happy Birthday!",
         "emoji": "🌺",
-        "theme": "theme-thailand"
+        "background": "linear-gradient(135deg, #ff758c, #ff7eb3, #fa709a)",
+        "accent": "#fff1f7"
     },
 
     {
         "language": "Vietnamese",
         "wish": "Chúc mừng sinh nhật!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🏮",
-        "theme": "theme-vietnam"
+        "english": "Happy Birthday!",
+        "emoji": "🌸",
+        "background": "linear-gradient(135deg, #f83600, #f9d423, #ff8008)",
+        "accent": "#fff6a3"
     },
 
     {
         "language": "Indonesian",
         "wish": "Selamat ulang tahun!",
-        "subtitle": "Happy Birthday!",
+        "english": "Happy Birthday!",
         "emoji": "🌴",
-        "theme": "theme-indonesia"
+        "background": "linear-gradient(135deg, #00b09b, #96c93d, #38ef7d)",
+        "accent": "#faffc7"
     },
 
     {
         "language": "Filipino",
         "wish": "Maligayang kaarawan!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🌴",
-        "theme": "theme-philippines"
-    },
-
-    {
-        "language": "Latin",
-        "wish": "Felix natalis!",
-        "subtitle": "Happy Birthday!",
-        "emoji": "🏛️",
-        "theme": "theme-latin"
+        "english": "Happy Birthday!",
+        "emoji": "🌼",
+        "background": "linear-gradient(135deg, #12c2e9, #c471ed, #f64f59)",
+        "accent": "#fff1a8"
     },
 
     {
         "language": "Irish",
         "wish": "Lá breithe sona duit!",
-        "subtitle": "Happy Birthday!",
+        "english": "Happy Birthday!",
         "emoji": "☘️",
-        "theme": "theme-ireland"
-    }
-]
-
-
-# ============================================================
-# FUNNY INTRO MESSAGES
-# ============================================================
-
-funny_messages = [
-
-    {
-        "emoji": "😂",
-        "title": "First things first...",
-        "message": "I could have simply wished you Happy Birthday."
-    },
-
-    {
-        "emoji": "🤦‍♀️",
-        "title": "But obviously...",
-        "message": "That would have been far too normal for me."
-    },
-
-    {
-        "emoji": "🌍",
-        "title": "So I had an idea...",
-        "message": "Why stop at one birthday wish when we can go around the world?"
-    },
-
-    {
-        "emoji": "👀",
-        "title": "Don't worry...",
-        "message": "You don't have to pack your bags. Just keep pressing NEXT."
-    },
-
-    {
-        "emoji": "😌",
-        "title": "One small warning...",
-        "message": "There might be a tiny amount of nonsense involved."
-    },
-
-    {
-        "emoji": "😂",
-        "title": "Actually...",
-        "message": "There is definitely a tiny amount of nonsense involved."
-    },
-
-    {
-        "emoji": "❤️",
-        "title": "But seriously...",
-        "message": "I wanted to make your birthday a little different this year."
-    },
-
-    {
-        "emoji": "✨",
-        "title": "So here we go...",
-        "message": "A little birthday wish, from a lot of different places."
+        "background": "linear-gradient(135deg, #11998e, #38ef7d, #00c9a7)",
+        "accent": "#efffc5"
     }
 ]
 
@@ -350,27 +336,59 @@ st.markdown(
     """
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap');
 
-* {
-    font-family: 'Poppins', sans-serif;
+html, body, [class*="css"] {
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .stApp {
+
     min-height: 100vh;
+
     background:
-        radial-gradient(circle at 10% 15%,
-            rgba(255, 105, 180, 0.30),
-            transparent 30%),
-        radial-gradient(circle at 90% 10%,
-            rgba(0, 191, 255, 0.22),
-            transparent 30%),
-        radial-gradient(circle at 50% 100%,
-            rgba(138, 43, 226, 0.30),
-            transparent 40%),
-        linear-gradient(135deg, #10001d, #21002f, #090014);
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 0, 128, 0.55),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(0, 220, 255, 0.45),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(255, 190, 0, 0.30),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 80% 90%,
+            rgba(150, 0, 255, 0.45),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ff006e 0%,
+            #8338ec 35%,
+            #3a86ff 65%,
+            #06d6a0 100%
+        );
+
+    background-attachment: fixed;
+
     color: white;
+
+    overflow-x: hidden;
 }
+
+/* ----------------------------------------------------------
+   HIDE STREAMLIT DEFAULT ELEMENTS
+---------------------------------------------------------- */
 
 #MainMenu {
     visibility: hidden;
@@ -386,119 +404,158 @@ footer {
 
 .block-container {
     max-width: 900px;
-    padding-top: 3rem;
+    padding-top: 2.5rem;
     padding-bottom: 4rem;
 }
 
-/* =========================================================
-   FLOATING PARTICLES
-   ========================================================= */
+/* ----------------------------------------------------------
+   ONLY FLOWERS + SHINE FLOAT
+---------------------------------------------------------- */
 
-.float {
+.floating {
+
     position: fixed;
-    bottom: -50px;
-    font-size: 24px;
-    opacity: 0.65;
+
+    bottom: -60px;
+
     pointer-events: none;
+
     z-index: 0;
-    animation: floatUp 9s linear infinite;
+
+    animation:
+        floatUp 10s linear infinite;
+
+    opacity: 0.75;
 }
 
-.f1 { left: 5%; animation-delay: 0s; }
-.f2 { left: 20%; animation-delay: 2s; }
-.f3 { left: 40%; animation-delay: 4s; }
-.f4 { left: 60%; animation-delay: 1s; }
-.f5 { left: 78%; animation-delay: 3s; }
-.f6 { left: 93%; animation-delay: 5s; }
+.float1 {
+    left: 6%;
+    font-size: 27px;
+    animation-delay: 0s;
+}
+
+.float2 {
+    left: 20%;
+    font-size: 20px;
+    animation-delay: 2s;
+}
+
+.float3 {
+    left: 38%;
+    font-size: 25px;
+    animation-delay: 4s;
+}
+
+.float4 {
+    left: 57%;
+    font-size: 22px;
+    animation-delay: 1s;
+}
+
+.float5 {
+    left: 75%;
+    font-size: 28px;
+    animation-delay: 3s;
+}
+
+.float6 {
+    left: 91%;
+    font-size: 20px;
+    animation-delay: 5s;
+}
 
 @keyframes floatUp {
 
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.7);
+
         opacity: 0;
     }
 
     15% {
-        opacity: 0.75;
+        opacity: 0.8;
     }
 
-    85% {
-        opacity: 0.75;
+    80% {
+        opacity: 0.8;
     }
 
     100% {
-        transform: translateY(-115vh) rotate(360deg);
+
+        transform:
+            translateY(-115vh)
+            rotate(360deg)
+            scale(1.15);
+
         opacity: 0;
     }
 }
 
-/* =========================================================
-   MAIN TITLE
-   ========================================================= */
+/* ----------------------------------------------------------
+   HEADINGS
+---------------------------------------------------------- */
 
 .main-title {
+
+    font-family: 'Playfair Display', serif;
+
     text-align: center;
+
     font-size: 48px;
+
     font-weight: 800;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ff69b4,
-            #ffd700,
-            #00ffff,
-            #ff69b4
-        );
+    color: white;
 
-    background-size: 300% auto;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: titleGradient 4s linear infinite;
+    text-shadow:
+        0 4px 18px rgba(0,0,0,0.25);
 
     margin-bottom: 8px;
 }
 
-@keyframes titleGradient {
-
-    0% {
-        background-position: 0% center;
-    }
-
-    100% {
-        background-position: 300% center;
-    }
-}
-
 .subtitle {
+
     text-align: center;
-    color: #ffd8f1;
+
     font-size: 18px;
+
+    color: rgba(255,255,255,0.92);
+
     margin-bottom: 30px;
 }
 
-/* =========================================================
+/* ----------------------------------------------------------
    GLASS CARD
-   ========================================================= */
+---------------------------------------------------------- */
 
 .glass-card {
 
-    background: rgba(255,255,255,0.09);
+    background:
+        rgba(255,255,255,0.16);
 
-    border: 1px solid rgba(255,255,255,0.18);
+    border:
+        1px solid rgba(255,255,255,0.32);
 
-    border-radius: 30px;
+    border-radius:
+        30px;
 
-    padding: 38px;
+    padding:
+        40px 32px;
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
 
     box-shadow:
-        0 10px 40px rgba(0,0,0,0.35),
-        0 0 30px rgba(255,105,180,0.12);
+        0 20px 60px rgba(0,0,0,0.20);
 
-    animation: cardIn 0.7s ease;
+    animation:
+        cardIn 0.65s ease;
 
 }
 
@@ -506,28 +563,80 @@ footer {
 
     from {
         opacity: 0;
-        transform: translateY(25px) scale(0.97);
+        transform:
+            translateY(25px)
+            scale(0.97);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
-/* =========================================================
-   EMOJI
-   ========================================================= */
+/* ----------------------------------------------------------
+   BIG EMOJI
+---------------------------------------------------------- */
 
 .big-emoji {
+
     text-align: center;
-    font-size: 70px;
+
+    font-size: 72px;
+
     margin-bottom: 12px;
+
+    animation:
+        gentleFloat 2.8s ease-in-out infinite;
+
 }
 
-/* =========================================================
+@keyframes gentleFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+/* ----------------------------------------------------------
+   INPUT
+---------------------------------------------------------- */
+
+.stTextInput input {
+
+    background:
+        rgba(255,255,255,0.18) !important;
+
+    color:
+        white !important;
+
+    border:
+        1px solid rgba(255,255,255,0.40) !important;
+
+    border-radius:
+        17px !important;
+
+    text-align:
+        center !important;
+
+    font-size:
+        20px !important;
+
+}
+
+.stTextInput input::placeholder {
+    color: rgba(255,255,255,0.70) !important;
+}
+
+/* ----------------------------------------------------------
    BUTTONS
-   ========================================================= */
+---------------------------------------------------------- */
 
 .stButton > button {
 
@@ -548,51 +657,33 @@ footer {
     background:
         linear-gradient(
             90deg,
-            #ff1493,
-            #8a2be2
+            #ff006e,
+            #8338ec,
+            #3a86ff
         );
 
     box-shadow:
-        0 6px 22px rgba(255,20,147,0.30);
+        0 8px 25px rgba(70,0,160,0.30);
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        all 0.25s ease;
 
 }
 
 .stButton > button:hover {
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px)
+        scale(1.01);
 
     box-shadow:
-        0 10px 32px rgba(255,20,147,0.55);
+        0 12px 32px rgba(255,0,110,0.40);
 
 }
 
-/* =========================================================
-   TEXT INPUT
-   ========================================================= */
-
-.stTextInput input {
-
-    background: rgba(255,255,255,0.10) !important;
-
-    color: white !important;
-
-    border: 1px solid rgba(255,255,255,0.25) !important;
-
-    border-radius: 16px !important;
-
-    text-align: center !important;
-
-    font-size: 21px !important;
-
-}
-
-/* =========================================================
+/* ----------------------------------------------------------
    HINT
-   ========================================================= */
+---------------------------------------------------------- */
 
 .hint-box {
 
@@ -604,293 +695,513 @@ footer {
 
     text-align: center;
 
-    background: rgba(255,215,0,0.10);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,215,0,0.25),
+            rgba(255,105,180,0.18)
+        );
 
-    border: 1px solid rgba(255,215,0,0.30);
+    border:
+        1px solid rgba(255,235,150,0.45);
 
-    color: #fff2b8;
+    color:
+        white;
 
-    animation: cardIn 0.5s ease;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.12);
+
+    animation:
+        cardIn 0.5s ease;
 
 }
 
-/* =========================================================
+/* ----------------------------------------------------------
    REACTION
-   ========================================================= */
+---------------------------------------------------------- */
 
 .reaction {
 
     text-align: center;
 
-    font-size: 24px;
+    font-size: 23px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 
-    padding: 25px;
-
-    color: #ffe8f7;
+    color: white;
 
 }
 
-/* =========================================================
-   WISH CARD
-   ========================================================= */
+/* ----------------------------------------------------------
+   LANGUAGE WISH
+---------------------------------------------------------- */
 
-.wish-card {
+.wish-wrapper {
 
-    min-height: 430px;
-
-    border-radius: 35px;
-
-    padding: 55px 30px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    border: 1px solid rgba(255,255,255,0.25);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,105,180,0.20),
-            rgba(138,43,226,0.20)
-        );
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,0.35),
-        0 0 40px rgba(255,105,180,0.16);
-
-    animation: wishAppear 0.8s ease;
+    animation:
+        wishIn 0.85s cubic-bezier(.2,.8,.2,1);
 
 }
 
-@keyframes wishAppear {
+@keyframes wishIn {
 
     0% {
+
         opacity: 0;
-        transform: scale(0.86) rotateX(8deg);
+
+        transform:
+            scale(0.80)
+            translateY(25px)
+            rotateX(10deg);
+
     }
 
     100% {
+
         opacity: 1;
-        transform: scale(1) rotateX(0);
+
+        transform:
+            scale(1)
+            translateY(0)
+            rotateX(0);
+
     }
+
 }
 
-.destination {
+.wish-card {
 
-    font-size: 16px;
+    min-height: 460px;
 
-    text-transform: uppercase;
+    border-radius: 38px;
 
-    letter-spacing: 4px;
+    padding:
+        55px 25px;
 
-    color: #ffc9ea;
+    display:
+        flex;
 
-    margin-bottom: 28px;
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    border:
+        2px solid rgba(255,255,255,0.30);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.25);
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+/* decorative glow */
+
+.wish-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.16);
+
+    filter:
+        blur(10px);
+
+    top: -120px;
+
+    right: -100px;
+
+}
+
+.wish-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.13);
+
+    filter:
+        blur(12px);
+
+    bottom: -100px;
+
+    left: -70px;
+
+}
+
+.language-label {
+
+    font-family:
+        'Playfair Display', serif;
+
+    font-size:
+        22px;
+
+    font-weight:
+        700;
+
+    color:
+        rgba(255,255,255,0.95);
+
+    margin-bottom:
+        25px;
+
+    position:
+        relative;
+
+    z-index:
+        2;
 
 }
 
 .wish-emoji {
 
-    font-size: 78px;
+    font-size:
+        78px;
 
-    margin-bottom: 25px;
+    margin-bottom:
+        25px;
 
-    animation: emojiFloat 2.5s ease-in-out infinite;
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    animation:
+        wishEmoji 2.5s ease-in-out infinite;
 
 }
 
-@keyframes emojiFloat {
+@keyframes wishEmoji {
 
     0%, 100% {
-        transform: translateY(0);
+        transform:
+            translateY(0)
+            rotate(-3deg);
     }
 
     50% {
-        transform: translateY(-10px);
+        transform:
+            translateY(-10px)
+            rotate(3deg);
     }
+
 }
 
-.wish-text {
+.wish-main {
 
-    font-size: 36px;
+    font-family:
+        'Noto Sans',
+        sans-serif;
 
-    font-weight: 800;
+    font-size:
+        37px;
 
-    color: white;
+    font-weight:
+        800;
+
+    line-height:
+        1.5;
+
+    color:
+        white;
 
     text-shadow:
-        0 0 18px rgba(255,105,180,0.55);
+        0 5px 20px rgba(0,0,0,0.25);
 
-    margin-bottom: 20px;
+    position:
+        relative;
 
-    line-height: 1.4;
+    z-index:
+        2;
 
-}
-
-.wish-subtitle {
-
-    font-size: 20px;
-
-    color: #ffe0f2;
-
-    font-style: italic;
+    margin-bottom:
+        22px;
 
 }
 
-/* =========================================================
-   FINAL
-   ========================================================= */
+.wish-english {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        21px;
+
+    font-style:
+        italic;
+
+    color:
+        rgba(255,255,255,0.92);
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+/* ----------------------------------------------------------
+   FINAL CELEBRATION
+---------------------------------------------------------- */
 
 .final-card {
 
-    text-align: center;
+    text-align:
+        center;
 
-    padding: 50px 30px;
+    padding:
+        55px 25px;
 
-    border-radius: 32px;
+    border-radius:
+        38px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(255,105,180,0.18),
-            rgba(0,191,255,0.13),
-            rgba(138,43,226,0.20)
+            rgba(255,0,110,0.30),
+            rgba(131,56,236,0.30),
+            rgba(58,134,255,0.30),
+            rgba(6,214,160,0.30)
         );
 
-    border: 1px solid rgba(255,255,255,0.22);
+    border:
+        1px solid rgba(255,255,255,0.35);
 
     box-shadow:
-        0 0 50px rgba(255,105,180,0.20);
+        0 25px 70px rgba(0,0,0,0.25);
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    animation:
+        finalAppear 1s ease;
+
+}
+
+@keyframes finalAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.75);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
 
 }
 
 .final-title {
 
-    font-size: 42px;
+    font-family:
+        'Playfair Display',
+        serif;
 
-    font-weight: 800;
+    font-size:
+        45px;
 
-    margin-bottom: 20px;
+    font-weight:
+        800;
 
-    animation: finalGlow 1.8s ease-in-out infinite alternate;
+    color:
+        white;
+
+    animation:
+        finalGlow 1.6s ease-in-out infinite alternate;
 
 }
 
 @keyframes finalGlow {
 
     from {
-        text-shadow: 0 0 8px rgba(255,105,180,0.5);
+        text-shadow:
+            0 0 10px rgba(255,255,255,0.4);
     }
 
     to {
         text-shadow:
-            0 0 20px rgba(255,105,180,0.8),
-            0 0 45px rgba(138,43,226,0.6);
+            0 0 25px rgba(255,255,255,0.9),
+            0 0 50px rgba(255,0,150,0.7);
     }
+
 }
 
 .final-message {
 
-    font-size: 19px;
+    font-size:
+        19px;
 
-    line-height: 1.9;
+    line-height:
+        1.9;
 
-    color: #ffe9f7;
+    color:
+        rgba(255,255,255,0.95);
 
-}
-
-/* =========================================================
-   COMPLETE WISHES
-   ========================================================= */
-
-.complete-wish {
-
-    padding: 18px 20px;
-
-    margin: 12px 0;
-
-    border-radius: 18px;
-
-    background: rgba(255,255,255,0.07);
-
-    border: 1px solid rgba(255,255,255,0.10);
-
-    text-align: center;
+    margin-top:
+        25px;
 
 }
 
-.complete-language {
+/* ----------------------------------------------------------
+   FINAL SPARKLES
+---------------------------------------------------------- */
 
-    font-size: 13px;
+.sparkle-field {
 
-    text-transform: uppercase;
+    height:
+        120px;
 
-    letter-spacing: 2px;
+    position:
+        relative;
 
-    color: #ffb8e1;
-
-}
-
-.complete-main {
-
-    font-size: 23px;
-
-    font-weight: 700;
-
-    margin: 5px 0;
+    margin-bottom:
+        15px;
 
 }
 
-.complete-sub {
+.spark {
 
-    color: #e8d8e3;
+    position:
+        absolute;
 
-    font-size: 15px;
+    font-size:
+        28px;
+
+    animation:
+        sparkle 1.8s ease-in-out infinite;
 
 }
 
-/* =========================================================
+.s1 {
+    left: 10%;
+    top: 40%;
+}
+
+.s2 {
+    left: 25%;
+    top: 10%;
+    animation-delay: .3s;
+}
+
+.s3 {
+    left: 45%;
+    top: 50%;
+    animation-delay: .6s;
+}
+
+.s4 {
+    left: 65%;
+    top: 15%;
+    animation-delay: .9s;
+}
+
+.s5 {
+    left: 82%;
+    top: 45%;
+    animation-delay: 1.2s;
+}
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: 0.25;
+        transform:
+            scale(0.6)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            scale(1.5)
+            rotate(180deg);
+    }
+
+}
+
+/* ----------------------------------------------------------
    MOBILE
-   ========================================================= */
+---------------------------------------------------------- */
 
 @media (max-width: 600px) {
 
     .main-title {
-        font-size: 34px;
+        font-size: 35px;
     }
 
-    .wish-text {
+    .wish-main {
         font-size: 27px;
     }
 
     .wish-card {
-        min-height: 390px;
-        padding: 35px 20px;
+        min-height: 400px;
+        padding: 40px 18px;
     }
 
-    .glass-card {
-        padding: 28px 20px;
+    .wish-emoji {
+        font-size: 65px;
+    }
+
+    .final-title {
+        font-size: 34px;
     }
 
 }
 
 </style>
 
-<div class="float f1">💖</div>
-<div class="float f2">✨</div>
-<div class="float f3">🎈</div>
-<div class="float f4">💕</div>
-<div class="float f5">🌸</div>
-<div class="float f6">✨</div>
+<!-- ONLY FLOWERS AND SHINE EMOJIS FLOAT -->
+
+<div class="floating float1">🌸</div>
+<div class="floating float2">✨</div>
+<div class="floating float3">🌺</div>
+<div class="floating float4">✦</div>
+<div class="floating float5">🌼</div>
+<div class="floating float6">✨</div>
 
 """,
     unsafe_allow_html=True
@@ -904,12 +1215,15 @@ footer {
 if st.session_state.page == "password":
 
     st.markdown(
-        '<div class="main-title">🔐 A Little Birthday Secret...</div>',
-        unsafe_allow_html=True
-    )
+        """
+        <div class="main-title">
+        🎂 Something Special for Brightuuuu
+        </div>
 
-    st.markdown(
-        '<div class="subtitle">There is something waiting inside for you.</div>',
+        <div class="subtitle">
+        Before the birthday wishes begin... there's one little challenge.
+        </div>
+        """,
         unsafe_allow_html=True
     )
 
@@ -917,24 +1231,32 @@ if st.session_state.page == "password":
         """
         <div class="glass-card">
 
-        <div class="big-emoji">🫣🔐🎂</div>
+            <div class="big-emoji">
+            🌸✨🎂✨🌸
+            </div>
 
-        <h2 style="text-align:center;">
-        Hey Brightuuuu..!!
-        </h2>
+            <h2 style="text-align:center;">
+            Hey Brightuuuu..!!
+            </h2>
 
-        <p style="
-            text-align:center;
-            color:#ffe1f3;
-            font-size:18px;
-            line-height:1.8;
-        ">
-        Before you enter, there's just one tiny problem...
-        <br><br>
-        <b>You need the secret password.</b>
-        <br>
-        And no, I'm not telling you. 😌
-        </p>
+            <p style="
+                text-align:center;
+                font-size:19px;
+                line-height:1.8;
+                color:white;
+            ">
+
+            There's something waiting for you here.
+
+            <br><br>
+
+            But first...
+
+            <br>
+
+            <b>Enter the password. 😌</b>
+
+            </p>
 
         </div>
         """,
@@ -942,17 +1264,18 @@ if st.session_state.page == "password":
     )
 
     password = st.text_input(
-        "Enter the secret password",
+        "Password",
         type="password",
-        placeholder="Enter password..."
+        placeholder="Enter the secret password..."
     )
 
     if st.button("🔓 Unlock"):
 
         if password == PASSWORD:
 
-            # Store how many hints were used
-            st.session_state.entry_mode = st.session_state.hint_level
+            st.session_state.entry_mode = (
+                st.session_state.hint_level
+            )
 
             st.session_state.page = "entry_reaction"
 
@@ -963,12 +1286,12 @@ if st.session_state.page == "password":
             st.session_state.password_attempts += 1
 
             st.error(
-                "❌ Nope! That's not it. Try again, birthday boy. 😂"
+                "❌ Nope! That's not it. Try again 😂"
             )
 
-    # ========================================================
+    # --------------------------------------------------------
     # HINT BUTTON
-    # ========================================================
+    # --------------------------------------------------------
 
     if st.session_state.hint_level < 2:
 
@@ -978,9 +1301,9 @@ if st.session_state.page == "password":
 
             st.rerun()
 
-    # ========================================================
+    # --------------------------------------------------------
     # HINT 1
-    # ========================================================
+    # --------------------------------------------------------
 
     if st.session_state.hint_level >= 1:
 
@@ -992,21 +1315,21 @@ if st.session_state.page == "password":
 
             <br><br>
 
-            It contains exactly <b>6 letters/characters</b>
-            and <b>4 digits</b>.
+            It has exactly <b>6 characters</b>
+            followed by <b>4 digits</b>.
 
             <br><br>
 
-            That's all you're getting from me. 😌
+            That's it. I'm done helping. 😌
 
             </div>
             """,
             unsafe_allow_html=True
         )
 
-    # ========================================================
+    # --------------------------------------------------------
     # HINT 2
-    # ========================================================
+    # --------------------------------------------------------
 
     if st.session_state.hint_level >= 2:
 
@@ -1018,12 +1341,12 @@ if st.session_state.page == "password":
 
             <br><br>
 
-            Think about the number you use to unlock
-            something very close to you every day. 👀
+            Think of something you type
+            to unlock your laptop. 💻
 
             <br><br>
 
-            <b>Your laptop PIN.</b> 💻
+            <b>Your laptop PIN.</b>
 
             </div>
             """,
@@ -1032,27 +1355,27 @@ if st.session_state.page == "password":
 
         st.markdown(
             """
-            <div style="
+            <p style="
                 text-align:center;
-                margin-top:20px;
-                color:#ffb6d9;
+                color:white;
+                margin-top:18px;
                 font-size:16px;
             ">
-            Okay... you have used BOTH hints.
-            <br>
-            I'm slightly disappointed now. 😑😂
-            </div>
+            Two hints already... really? 😑😂
+            </p>
             """,
             unsafe_allow_html=True
         )
 
         if st.button("🚨 I give up — Reveal"):
+
             st.session_state.show_reveal = True
+
             st.rerun()
 
-    # ========================================================
-    # REVEAL — DOES NOT REVEAL PASSWORD
-    # ========================================================
+    # --------------------------------------------------------
+    # REVEAL
+    # --------------------------------------------------------
 
     if st.session_state.show_reveal:
 
@@ -1060,35 +1383,33 @@ if st.session_state.page == "password":
             """
             <div class="final-card">
 
-            <div class="big-emoji">
-            🎂🎉❤️
-            </div>
+                <div class="big-emoji">
+                🎂✨🌸✨🎂
+                </div>
 
-            <div class="final-title">
-            HAPPY BIRTHDAY, BRIGHTUUUU!!
-            </div>
+                <div class="final-title">
+                HAPPY BIRTHDAY, BRIGHTUUUU!!
+                </div>
 
-            <div class="final-message">
+                <div class="final-message">
 
-            I was going to make you work for it... 😂
+                Okay, no more guessing. 😂
 
-            <br><br>
+                <br><br>
 
-            But fine.
+                I hope you have a genuinely wonderful birthday.
 
-            <br>
+                <br><br>
 
-            No password. No clues. No more tests.
+                Enjoy your day, smile a lot,
+                eat something nice,
+                and have a beautiful year ahead. ❤️
 
-            <br><br>
+                <br><br>
 
-            Just have an absolutely wonderful birthday! ❤️
+                <b>Happy Birthday! 🎂✨</b>
 
-            <br><br>
-
-            Enjoy your day, birthday boy. 🎂✨
-
-            </div>
+                </div>
 
             </div>
             """,
@@ -1097,7 +1418,7 @@ if st.session_state.page == "password":
 
 
 # ============================================================
-# ENTRY REACTION
+# PASSWORD REACTION
 # ============================================================
 
 elif st.session_state.page == "entry_reaction":
@@ -1114,33 +1435,31 @@ elif st.session_state.page == "entry_reaction":
             """
             <div class="glass-card">
 
-            <div class="big-emoji">
-            🎉🥳🎉
-            </div>
+                <div class="big-emoji">
+                🎉✨🎉
+                </div>
 
-            <div class="reaction">
+                <div class="reaction">
 
-            <b>WAITTTT... YOU GOT IT?!</b>
+                <b>WAITTT... YOU GOT IT?!</b>
 
-            <br><br>
+                <br><br>
 
-            No hints?!
+                And you didn't even use a hint?!
 
-            <br>
+                <br><br>
 
-            Okayyy... I'm impressed. 👏😂
+                Okay Brightuuuu...
 
-            <br><br>
+                <br>
 
-            <span style="font-size:19px;">
-            That's exactly how I wanted you to enter.
-            </span>
+                <b>I'm genuinely impressed. 👏😂</b>
 
-            <br><br>
+                <br><br>
 
-            <b>Welcome, Brightuuuu!! ❤️</b>
+                You may proceed. 😌
 
-            </div>
+                </div>
 
             </div>
             """,
@@ -1157,31 +1476,27 @@ elif st.session_state.page == "entry_reaction":
             """
             <div class="glass-card">
 
-            <div class="big-emoji">
-            😌✨
-            </div>
+                <div class="big-emoji">
+                😌✨
+                </div>
 
-            <div class="reaction">
+                <div class="reaction">
 
-            <b>Okayyy... acceptable.</b>
+                <b>Okayyy... acceptable.</b>
 
-            <br><br>
+                <br><br>
 
-            You needed one hint.
+                One hint isn't too bad.
 
-            <br>
+                <br><br>
 
-            I'll allow it. 😌
+                I'll let that one slide. 😌
 
-            <br><br>
+                <br><br>
 
-            At least you figured it out.
+                <b>Welcome, Brightuuuu! ❤️</b>
 
-            <br><br>
-
-            <b>Welcome, Brightuuuu!! ❤️</b>
-
-            </div>
+                </div>
 
             </div>
             """,
@@ -1198,36 +1513,37 @@ elif st.session_state.page == "entry_reaction":
             """
             <div class="glass-card">
 
-            <div class="big-emoji">
-            😑👉😂
-            </div>
+                <div class="big-emoji">
+                😑🌸😂
+                </div>
 
-            <div class="reaction">
+                <div class="reaction">
 
-            <b>Seriously, Brightuuuu?</b>
+                <b>Seriously, Brightuuuu?!</b>
 
-            <br><br>
+                <br><br>
 
-            You used BOTH hints?!
+                You used BOTH hints?!
 
-            <br><br>
+                <br><br>
 
-            I literally gave you two clues
-            and you still made me do all the work. 😂
+                I gave you TWO chances. 😂
 
-            <br><br>
+                <br><br>
 
-            I'm mildly offended.
+                <span style="font-size:18px;">
+                Fine. I'm slightly offended.
+                </span>
 
-            <br><br>
+                <br><br>
 
-            But fine...
+                But okay...
 
-            <br>
+                <br>
 
-            <b>Welcome. 😌❤️</b>
+                <b>Welcome. 😌</b>
 
-            </div>
+                </div>
 
             </div>
             """,
@@ -1252,7 +1568,11 @@ elif st.session_state.page == "welcome":
     st.markdown(
         """
         <div class="main-title">
-        ✨ Welcome Brightuuuu..!! ✨
+        Welcome Brightuuuu..!! 🎂
+        </div>
+
+        <div class="subtitle">
+        Okay... now we're getting somewhere. ✨
         </div>
         """,
         unsafe_allow_html=True
@@ -1262,51 +1582,48 @@ elif st.session_state.page == "welcome":
         """
         <div class="glass-card">
 
-        <div class="big-emoji">
-        🥳🎂✨
-        </div>
+            <div class="big-emoji">
+            🌸🎂✨🌼
+            </div>
 
-        <h2 style="text-align:center;">
-        You made it!
-        </h2>
+            <h2 style="text-align:center;">
+            I could have just sent you a message.
+            </h2>
 
-        <p style="
-            text-align:center;
-            color:#ffe4f4;
-            font-size:20px;
-            line-height:1.9;
-        ">
+            <p style="
+                text-align:center;
+                font-size:20px;
+                line-height:1.9;
+                color:white;
+            ">
 
-        I could have just typed
+            Something simple like...
 
-        <br>
+            <br><br>
 
-        <b>"Happy Birthday!"</b>
+            <b>“Happy Birthday!”</b>
 
-        <br><br>
+            <br><br>
 
-        and sent it to you.
+            But somehow that felt a little too ordinary.
 
-        <br><br>
+            <br><br>
 
-        But apparently...
+            So I decided to make you
+            travel a little today. 🌍
 
-        <br>
+            <br><br>
 
-        <b>that was not enough. 😂</b>
+            <b>Ready?</b>
 
-        <br><br>
-
-        So I made you something a little different.
-
-        </p>
+            </p>
 
         </div>
         """,
         unsafe_allow_html=True
     )
 
-    if st.button("🌍 Let's see it"):
+    if st.button("🌍 Let's go"):
 
         st.session_state.page = "funny"
 
@@ -1319,7 +1636,68 @@ elif st.session_state.page == "welcome":
 
 elif st.session_state.page == "funny":
 
-    item = funny_messages[st.session_state.funny_index]
+    item = funny_messages[
+        st.session_state.funny_index
+    ] if "funny_messages" in globals() else None
+
+    # --------------------------------------------------------
+    # INLINE FUNNY MESSAGES
+    # --------------------------------------------------------
+
+    funny_messages_local = [
+
+        (
+            "😂",
+            "First things first...",
+            "I could have wished you normally."
+        ),
+
+        (
+            "🤦‍♀️",
+            "But then I thought...",
+            "Where's the fun in being normal?"
+        ),
+
+        (
+            "🌍",
+            "So I had an idea...",
+            "Why wish you in just one language?"
+        ),
+
+        (
+            "👀",
+            "And then the idea got slightly out of hand.",
+            "Very slightly."
+        ),
+
+        (
+            "😂",
+            "So now you're here.",
+            "And yes, you're going to have to keep pressing NEXT."
+        ),
+
+        (
+            "✨",
+            "No complicated tasks.",
+            "No more passwords. Promise."
+        ),
+
+        (
+            "🌸",
+            "Just enjoy the little surprise.",
+            "You deserve a nice birthday."
+        ),
+
+        (
+            "🎂",
+            "Okay...",
+            "Let's begin."
+        )
+    ]
+
+    emoji, title, message = funny_messages_local[
+        st.session_state.funny_index
+    ]
 
     st.markdown(
         """
@@ -1334,29 +1712,29 @@ elif st.session_state.page == "funny":
         f"""
         <div class="glass-card">
 
-        <div class="big-emoji">
-        {item["emoji"]}
-        </div>
+            <div class="big-emoji">
+            {emoji}
+            </div>
 
-        <h2 style="text-align:center;">
-        {item["title"]}
-        </h2>
+            <h2 style="text-align:center;">
+            {title}
+            </h2>
 
-        <p style="
-            text-align:center;
-            font-size:23px;
-            color:#ffe8f6;
-            line-height:1.7;
-        ">
-        {item["message"]}
-        </p>
+            <p style="
+                text-align:center;
+                font-size:23px;
+                line-height:1.8;
+                color:white;
+            ">
+            {message}
+            </p>
 
         </div>
         """,
         unsafe_allow_html=True
     )
 
-    if st.session_state.funny_index < len(funny_messages) - 1:
+    if st.session_state.funny_index < len(funny_messages_local) - 1:
 
         if st.button("Next 👉"):
 
@@ -1366,7 +1744,7 @@ elif st.session_state.page == "funny":
 
     else:
 
-        if st.button("🌎 Okay, let's travel"):
+        if st.button("🌎 Begin the wishes"):
 
             st.session_state.page = "wishes"
 
@@ -1379,43 +1757,52 @@ elif st.session_state.page == "funny":
 
 elif st.session_state.page == "wishes":
 
-    current = wishes[st.session_state.wish_index]
+    current = wishes[
+        st.session_state.wish_index
+    ]
 
     st.markdown(
         """
         <div class="subtitle">
-        🌎 A little birthday trip begins...
+        🌍 A little birthday journey...
         </div>
         """,
         unsafe_allow_html=True
     )
 
+    # --------------------------------------------------------
+    # WISH CARD
+    #
+    # IMPORTANT:
+    # Everything is directly inserted into HTML.
+    # No Python representation/list is shown to the user.
+    # --------------------------------------------------------
+
     st.markdown(
         f"""
-        <div class="wish-card {current["theme"]}">
+        <div class="wish-wrapper">
 
-            <div class="destination">
-            🌍 DESTINATION
-            </div>
+            <div
+                class="wish-card"
+                style="background:{current["background"]};"
+            >
 
-            <div style="
-                font-size:19px;
-                color:#ffd0eb;
-                margin-bottom:10px;
-            ">
-            {current["language"]}
-            </div>
+                <div class="language-label">
+                🌍 {current["language"]}
+                </div>
 
-            <div class="wish-emoji">
-            {current["emoji"]}
-            </div>
+                <div class="wish-emoji">
+                {current["emoji"]}
+                </div>
 
-            <div class="wish-text">
-            {current["wish"]}
-            </div>
+                <div class="wish-main">
+                {current["wish"]}
+                </div>
 
-            <div class="wish-subtitle">
-            {current["subtitle"]}
+                <div class="wish-english">
+                {current["english"]}
+                </div>
+
             </div>
 
         </div>
@@ -1426,12 +1813,13 @@ elif st.session_state.page == "wishes":
     st.markdown("<br>", unsafe_allow_html=True)
 
     # --------------------------------------------------------
+    # ONLY NEXT
     # NO BACK BUTTON
     # --------------------------------------------------------
 
     if st.session_state.wish_index < len(wishes) - 1:
 
-        if st.button("Next 🌍"):
+        if st.button("Next 🌸"):
 
             st.session_state.wish_index += 1
 
@@ -1456,32 +1844,29 @@ elif st.session_state.page == "final_intro":
         """
         <div class="glass-card">
 
-        <div class="big-emoji">
-        🌎✨❤️
-        </div>
+            <div class="big-emoji">
+            🌍✨🌸✨🌍
+            </div>
 
-        <div class="reaction">
+            <div class="reaction">
 
-        <b>And after travelling all this way...</b>
+            <b>And that's the little journey.</b>
 
-        <br><br>
+            <br><br>
 
-        I think it's time for the one wish
-        that actually matters.
+            So many different ways to say it...
 
-        <br><br>
+            <br><br>
 
-        <span style="font-size:19px;">
-        No more destinations.
-        </span>
+            But here's the one I really wanted you to hear.
 
-        <br>
+            <br><br>
 
-        <span style="font-size:19px;">
-        Just one birthday wish from me to you.
-        </span>
+            <span style="font-size:18px;">
+            ❤️ From me to you.
+            </span>
 
-        </div>
+            </div>
 
         </div>
         """,
@@ -1496,115 +1881,72 @@ elif st.session_state.page == "final_intro":
 
 
 # ============================================================
-# FINAL BIRTHDAY MESSAGE
+# FINAL BIRTHDAY SCREEN
 # ============================================================
 
 elif st.session_state.page == "final":
-
-    st.balloons()
 
     st.markdown(
         """
         <div class="final-card">
 
-        <div class="big-emoji">
-        🎂🎉🎈❤️
-        </div>
+            <div class="sparkle-field">
 
-        <div class="final-title">
-        HAPPY BIRTHDAY, BRIGHTUUUU!!
-        </div>
-
-        <div class="final-message">
-
-        I hope your day is filled with
-        happiness, laughter, good food,
-        good people and lots of little moments
-        that make you smile.
-
-        <br><br>
-
-        I hope the year ahead brings you
-        wonderful memories, exciting things,
-        and plenty of reasons to be happy.
-
-        <br><br>
-
-        Have a really, really wonderful birthday. ❤️
-
-        <br><br>
-
-        <b>Enjoy your day, Brightuuuu! 🎂✨</b>
-
-        </div>
-
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    # ========================================================
-    # COMPLETE WISHES
-    # ========================================================
-
-    st.markdown(
-        """
-        <div class="glass-card">
-
-        <h2 style="text-align:center;">
-        🌎 All the wishes, together ❤️
-        </h2>
-
-        <p style="
-            text-align:center;
-            color:#ffd9ef;
-            margin-bottom:25px;
-        ">
-        Because apparently one language was never enough.
-        </p>
-
-        """,
-        unsafe_allow_html=True
-    )
-
-    for item in wishes:
-
-        st.markdown(
-            f"""
-            <div class="complete-wish">
-
-                <div class="complete-language">
-                {item["language"]}
-                </div>
-
-                <div class="complete-main">
-                {item["wish"]}
-                </div>
-
-                <div class="complete-sub">
-                {item["subtitle"]}
-                </div>
+                <div class="spark s1">✦</div>
+                <div class="spark s2">✨</div>
+                <div class="spark s3">✧</div>
+                <div class="spark s4">✨</div>
+                <div class="spark s5">✦</div>
 
             </div>
-            """,
-            unsafe_allow_html=True
-        )
+
+            <div class="big-emoji">
+            🎂🌸✨🌼
+            </div>
+
+            <div class="final-title">
+            HAPPY BIRTHDAY, BRIGHTUUUU!!
+            </div>
+
+            <div class="final-message">
+
+            I hope your day is filled with
+            happiness, laughter, good food,
+            good people and lots of little moments
+            that make you smile.
+
+            <br><br>
+
+            I hope the year ahead brings you
+            wonderful memories, exciting things,
+            and plenty of reasons to be happy.
+
+            <br><br>
+
+            Have a really wonderful birthday,
+            Brightuuuu. ❤️
+
+            <br><br>
+
+            <b>Enjoy your day! 🎂✨</b>
+
+            </div>
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
     st.markdown(
         """
-        </div>
-
         <div style="
             text-align:center;
-            margin-top:25px;
-            color:#ffb8dc;
-            font-size:14px;
+            margin-top:28px;
+            color:rgba(255,255,255,0.90);
+            font-family:'Playfair Display',serif;
+            font-size:17px;
         ">
-        Made with a little bit of code,
-        a little bit of madness,
-        and a lot of thought. ❤️
+        Made specially for you. 🌸
         </div>
         """,
         unsafe_allow_html=True
