@@ -2661,12 +2661,13 @@ funny_messages = [
     {
         "emoji": "👀",
         "title": "Don't worry...",
-        "message": "You don't have to pack your bags. Just keep pressing NEXT."
+        "message": "You don't have to pack your bags."
     },
 
     {
         "emoji": "✨",
         "title": "So here we go...",
+        "message": "Just keep pressing NEXT."
     }
 ]
 
