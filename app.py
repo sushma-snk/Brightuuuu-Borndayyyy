@@ -1676,8 +1676,8 @@ import random
 # ============================================================
 
 st.set_page_config(
-    page_title="A Birthday Surprise for Brightuuuu 🎂",
-    page_icon="💗",
+    page_title="A Birthday Surprise for Brightuuuu 💗",
+    page_icon="🎂",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
@@ -1692,23 +1692,23 @@ PASSWORD = "T20080209S"
 # SESSION STATE
 # ============================================================
 
-defaults = {
+DEFAULTS = {
     "page": "password",
-    "hint_level": 0,
     "password_attempts": 0,
-    "entry_mode": None,
-    "show_reveal": False,
     "funny_index": 0,
     "wish_index": 0,
+    "secret_clicks": 0,
+    "music_started": False,
 }
 
-for key, value in defaults.items():
+for key, value in DEFAULTS.items():
     if key not in st.session_state:
         st.session_state[key] = value
 
 
 # ============================================================
-# PASTEL CSS
+# CUSTOM CSS
+# PASTEL ONLY
 # ============================================================
 
 st.markdown(
@@ -1716,26 +1716,38 @@ st.markdown(
     <style>
 
     /* ========================================================
-       IMPORT FONTS
+       GOOGLE FONTS
        ======================================================== */
 
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap');
 
 
     /* ========================================================
-       GLOBAL
+       GLOBAL BACKGROUND
        ======================================================== */
-
-    html, body, [class*="css"] {
-        font-family: 'Quicksand', sans-serif;
-    }
 
     .stApp {
         background:
-            radial-gradient(circle at 10% 10%, #fce4ec 0%, transparent 28%),
-            radial-gradient(circle at 90% 15%, #e8eaf6 0%, transparent 30%),
-            radial-gradient(circle at 20% 90%, #e0f2f1 0%, transparent 30%),
-            radial-gradient(circle at 85% 85%, #fff3e0 0%, transparent 30%),
+            radial-gradient(
+                circle at 5% 10%,
+                rgba(248, 215, 228, 0.70),
+                transparent 25%
+            ),
+            radial-gradient(
+                circle at 95% 15%,
+                rgba(218, 218, 242, 0.75),
+                transparent 28%
+            ),
+            radial-gradient(
+                circle at 10% 90%,
+                rgba(213, 237, 232, 0.70),
+                transparent 28%
+            ),
+            radial-gradient(
+                circle at 90% 90%,
+                rgba(250, 232, 210, 0.70),
+                transparent 27%
+            ),
             #fffaf7;
 
         min-height: 100vh;
@@ -1743,14 +1755,10 @@ st.markdown(
 
 
     /* ========================================================
-       HIDE STREAMLIT DEFAULT ELEMENTS
+       HIDE STREAMLIT CHROME
        ======================================================== */
 
     #MainMenu {
-        visibility: hidden;
-    }
-
-    footer {
         visibility: hidden;
     }
 
@@ -1758,120 +1766,156 @@ st.markdown(
         visibility: hidden;
     }
 
+    footer {
+        visibility: hidden;
+    }
+
 
     /* ========================================================
-       MAIN CONTAINER
+       MAIN WIDTH
        ======================================================== */
 
     .block-container {
-        max-width: 760px;
+        max-width: 820px;
         padding-top: 2rem;
-        padding-bottom: 4rem;
+        padding-bottom: 5rem;
     }
 
 
     /* ========================================================
-       PASTEL CARD
+       FONT CLASSES
        ======================================================== */
 
-    .pastel-card {
-        background: rgba(255, 255, 255, 0.78);
-        border: 1px solid rgba(255, 255, 255, 0.9);
-        border-radius: 30px;
-        padding: 38px 34px;
-        box-shadow:
-            0 15px 45px rgba(180, 160, 180, 0.16),
-            inset 0 1px 0 rgba(255,255,255,0.8);
+    .serif {
+        font-family: 'DM Serif Display', serif;
+    }
 
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+    .script {
+        font-family: 'Pacifico', cursive;
+    }
 
-        text-align: center;
-        margin: 10px auto 25px auto;
+    .body-font {
+        font-family: 'Quicksand', sans-serif;
     }
 
 
     /* ========================================================
-       HEADINGS
+       GLASS CARD
+       ======================================================== */
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.72);
+
+        border: 1px solid rgba(255, 255, 255, 0.90);
+
+        border-radius: 34px;
+
+        padding: 42px 38px;
+
+        margin: 12px auto 25px auto;
+
+        box-shadow:
+            0 20px 55px rgba(174, 155, 174, 0.14),
+            inset 0 1px 1px rgba(255,255,255,0.9);
+
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+
+        text-align: center;
+    }
+
+
+    /* ========================================================
+       TOP DECORATION
+       ======================================================== */
+
+    .top-decoration {
+        font-size: 1.7rem;
+        letter-spacing: 12px;
+        opacity: 0.75;
+        margin-bottom: 15px;
+    }
+
+
+    /* ========================================================
+       TITLES
        ======================================================== */
 
     .main-title {
         font-family: 'DM Serif Display', serif;
-        font-size: 3.4rem;
+        font-size: 3.5rem;
         line-height: 1.15;
-        color: #8e7d9a;
-        margin-bottom: 10px;
+        color: #8d7c91;
+        margin: 10px 0;
     }
 
     .script-title {
         font-family: 'Pacifico', cursive;
-        font-size: 2.8rem;
+        font-size: 2.9rem;
+        line-height: 1.3;
         color: #c58ca8;
-        margin: 10px 0;
+        margin: 10px 0 18px 0;
     }
 
-    .section-title {
-        font-family: 'DM Serif Display', serif;
-        font-size: 2.4rem;
-        color: #8d8295;
-        margin-bottom: 15px;
+    .small-script {
+        font-family: 'Pacifico', cursive;
+        font-size: 1.55rem;
+        color: #c18da5;
     }
 
     .subtitle {
         font-family: 'Quicksand', sans-serif;
-        font-size: 1.1rem;
+        font-size: 1.08rem;
+        line-height: 1.8;
         font-weight: 600;
-        color: #9a919b;
-        line-height: 1.7;
+        color: #958a94;
     }
 
-
-    /* ========================================================
-       SMALL TEXT
-       ======================================================== */
-
     .soft-text {
-        color: #aaa0a8;
-        font-size: 0.95rem;
-        line-height: 1.7;
+        font-family: 'Quicksand', sans-serif;
+        color: #a1979f;
+        font-size: 0.98rem;
+        line-height: 1.85;
     }
 
     .cute-text {
-        color: #b18ca2;
+        font-family: 'Quicksand', sans-serif;
+        color: #b3889f;
         font-size: 1.05rem;
-        font-weight: 600;
+        font-weight: 700;
+        line-height: 1.8;
     }
 
 
     /* ========================================================
-       BIG HEART
+       HEART
        ======================================================== */
 
-    .big-heart {
+    .heart {
         font-size: 5rem;
-        animation: heartbeat 1.8s infinite;
-        margin: 5px;
+        display: inline-block;
+        animation: heartbeat 2s ease-in-out infinite;
     }
 
     @keyframes heartbeat {
 
-        0% {
+        0%, 100% {
             transform: scale(1);
         }
 
-        25% {
-            transform: scale(1.12);
+        15% {
+            transform: scale(1.10);
         }
 
-        40% {
+        30% {
             transform: scale(1);
         }
 
-        60% {
+        45% {
             transform: scale(1.08);
         }
 
-        100% {
+        60% {
             transform: scale(1);
         }
     }
@@ -1883,94 +1927,91 @@ st.markdown(
 
     .floating {
         position: fixed;
-        font-size: 25px;
-        opacity: 0.45;
-        pointer-events: none;
         z-index: 0;
+        pointer-events: none;
+        opacity: 0.45;
+        font-size: 24px;
     }
 
-    .flower1 {
-        top: 12%;
-        left: 5%;
-        animation: float1 6s ease-in-out infinite;
+    .f1 {
+        top: 8%;
+        left: 4%;
+        animation: floatA 7s ease-in-out infinite;
     }
 
-    .flower2 {
-        top: 28%;
-        right: 5%;
-        animation: float2 7s ease-in-out infinite;
+    .f2 {
+        top: 20%;
+        right: 4%;
+        animation: floatB 8s ease-in-out infinite;
     }
 
-    .flower3 {
+    .f3 {
+        top: 55%;
+        left: 2%;
+        animation: floatB 9s ease-in-out infinite;
+    }
+
+    .f4 {
         bottom: 12%;
-        left: 8%;
-        animation: float1 8s ease-in-out infinite;
+        right: 4%;
+        animation: floatA 7s ease-in-out infinite;
     }
 
-    .flower4 {
-        bottom: 20%;
-        right: 7%;
-        animation: float2 6s ease-in-out infinite;
+    .f5 {
+        bottom: 7%;
+        left: 10%;
+        animation: floatB 8s ease-in-out infinite;
     }
 
-    @keyframes float1 {
+    @keyframes floatA {
+
         0%, 100% {
-            transform: translateY(0px) rotate(0deg);
+            transform: translateY(0) rotate(-5deg);
         }
 
         50% {
-            transform: translateY(-18px) rotate(8deg);
+            transform: translateY(-20px) rotate(8deg);
         }
     }
 
-    @keyframes float2 {
+    @keyframes floatB {
+
         0%, 100% {
-            transform: translateY(0px) rotate(0deg);
+            transform: translateY(0) rotate(5deg);
         }
 
         50% {
-            transform: translateY(15px) rotate(-8deg);
+            transform: translateY(18px) rotate(-8deg);
         }
     }
 
 
     /* ========================================================
-       PASSWORD BOX
+       DIVIDER
        ======================================================== */
 
-    .password-title {
-        font-family: 'Pacifico', cursive;
-        color: #b7839d;
-        font-size: 2rem;
+    .divider {
+        height: 1px;
+
+        margin: 28px 0;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                #e9dce5,
+                transparent
+            );
     }
 
 
     /* ========================================================
-       WISH CARD
+       PASSWORD AREA
        ======================================================== */
 
-    .wish-card {
-        background: linear-gradient(
-            135deg,
-            rgba(252, 228, 236, 0.75),
-            rgba(232, 234, 246, 0.75)
-        );
-
-        border-radius: 25px;
-        padding: 28px;
-        margin: 20px 0;
-
-        border: 1px solid rgba(255,255,255,0.9);
-
-        box-shadow:
-            0 10px 30px rgba(190,170,190,0.14);
-    }
-
-    .wish-text {
-        font-family: 'DM Serif Display', serif;
-        font-size: 1.65rem;
-        color: #81768a;
-        line-height: 1.6;
+    .lock {
+        font-size: 3.5rem;
+        margin-bottom: 5px;
     }
 
 
@@ -1979,27 +2020,115 @@ st.markdown(
        ======================================================== */
 
     .funny-card {
-        background: linear-gradient(
-            135deg,
-            #fff3e0,
-            #fce4ec
-        );
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255, 238, 222, 0.80),
+                rgba(250, 224, 235, 0.80)
+            );
 
         border-radius: 28px;
+
+        border: 1px solid rgba(255,255,255,0.9);
+
         padding: 30px;
+
+        margin: 25px 0;
+
+        box-shadow:
+            0 12px 35px rgba(180,160,170,0.12);
+    }
+
+    .funny-number {
+        font-family: 'Pacifico', cursive;
+        color: #c394a8;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .funny-message {
+        font-family: 'Quicksand', sans-serif;
+        color: #887b83;
+        font-size: 1.18rem;
+        line-height: 1.8;
+        font-weight: 600;
+    }
+
+
+    /* ========================================================
+       WISH CARD
+       ======================================================== */
+
+    .wish-card {
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(237, 228, 245, 0.82),
+                rgba(222, 240, 236, 0.80)
+            );
+
+        border-radius: 30px;
+
+        padding: 34px 25px;
+
+        margin: 25px 0;
+
         border: 1px solid rgba(255,255,255,0.9);
 
         box-shadow:
-            0 10px 30px rgba(200,170,180,0.15);
-
-        margin: 20px 0;
+            0 14px 38px rgba(160,150,175,0.12);
     }
 
-    .funny-text {
-        font-size: 1.25rem;
-        color: #8d7d84;
-        line-height: 1.7;
-        font-weight: 600;
+    .wish-language {
+        font-family: 'Quicksand', sans-serif;
+        color: #a18c9e;
+        font-size: 0.88rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+
+    .wish-message {
+        font-family: 'DM Serif Display', serif;
+        color: #817589;
+        font-size: 1.7rem;
+        line-height: 1.65;
+    }
+
+
+    /* ========================================================
+       MEMORY / EMOTIONAL CARD
+       ======================================================== */
+
+    .memory-card {
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(252, 230, 238, 0.82),
+                rgba(232, 230, 245, 0.82)
+            );
+
+        border-radius: 32px;
+
+        padding: 36px 30px;
+
+        border: 1px solid rgba(255,255,255,0.95);
+
+        box-shadow:
+            0 18px 45px rgba(180,155,175,0.13);
+
+        margin: 25px 0;
+    }
+
+    .memory-line {
+        font-family: 'DM Serif Display', serif;
+        font-size: 1.35rem;
+        line-height: 1.9;
+        color: #837682;
     }
 
 
@@ -2008,37 +2137,61 @@ st.markdown(
        ======================================================== */
 
     .final-card {
+
         background:
             linear-gradient(
                 145deg,
-                rgba(252,228,236,0.88),
-                rgba(232,234,246,0.88),
-                rgba(224,242,241,0.88)
+                rgba(249, 220, 232, 0.88),
+                rgba(228, 224, 244, 0.88),
+                rgba(219, 238, 233, 0.88)
             );
 
-        border-radius: 35px;
-        padding: 45px 35px;
+        border-radius: 40px;
 
-        border: 2px solid rgba(255,255,255,0.8);
+        padding: 50px 35px;
+
+        border: 2px solid rgba(255,255,255,0.9);
 
         box-shadow:
-            0 20px 60px rgba(170,150,180,0.18);
+            0 25px 70px rgba(165,145,170,0.17);
 
         text-align: center;
+
+        overflow: hidden;
+    }
+
+    .cake {
+        font-size: 4.5rem;
+        margin-bottom: 10px;
     }
 
     .final-name {
         font-family: 'Pacifico', cursive;
-        font-size: 3.5rem;
-        color: #c18ca5;
-        margin: 15px 0;
+        color: #bf88a3;
+        font-size: 3.6rem;
+        line-height: 1.4;
+    }
+
+    .final-heading {
+        font-family: 'DM Serif Display', serif;
+        color: #827486;
+        font-size: 2rem;
+        margin: 18px 0;
     }
 
     .final-message {
-        font-family: 'DM Serif Display', serif;
-        font-size: 1.5rem;
-        line-height: 1.8;
-        color: #7f7482;
+        font-family: 'Quicksand', sans-serif;
+        color: #807580;
+        font-size: 1.12rem;
+        line-height: 2;
+        font-weight: 500;
+    }
+
+    .signature {
+        font-family: 'Pacifico', cursive;
+        color: #c18ca5;
+        font-size: 1.6rem;
+        margin-top: 25px;
     }
 
 
@@ -2050,15 +2203,17 @@ st.markdown(
 
         width: 100%;
 
+        min-height: 48px;
+
         border-radius: 18px;
 
-        border: 1px solid rgba(255,255,255,0.9);
+        border: 1px solid rgba(255,255,255,0.95);
 
         background:
             linear-gradient(
                 135deg,
-                #f8dce7,
-                #e4e1f4
+                #f4d9e5,
+                #e2def2
             );
 
         color: #806f7b;
@@ -2069,91 +2224,44 @@ st.markdown(
 
         font-size: 1rem;
 
-        padding: 0.7rem 1rem;
-
         box-shadow:
-            0 6px 18px rgba(170,150,170,0.12);
+            0 7px 20px rgba(170,150,170,0.12);
 
-        transition: all 0.25s ease;
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
     }
-
 
     .stButton > button:hover {
 
         transform: translateY(-3px);
 
         box-shadow:
-            0 10px 25px rgba(170,150,170,0.18);
-
-        border-color: #f0d9e4;
+            0 12px 28px rgba(170,150,170,0.18);
     }
 
 
     /* ========================================================
-       INPUT
+       TEXT INPUT
        ======================================================== */
 
     .stTextInput input {
 
-        border-radius: 17px !important;
+        background: rgba(255,255,255,0.78) !important;
 
         border: 2px solid #eadde6 !important;
 
-        background: rgba(255,255,255,0.75) !important;
-
-        color: #786e77 !important;
-
-        text-align: center;
-
-        font-family: 'Quicksand', sans-serif;
-
-        font-weight: 600;
+        border-radius: 18px !important;
 
         padding: 14px !important;
-    }
-
-    .stTextInput input:focus {
-
-        border-color: #d8b9ca !important;
-
-        box-shadow:
-            0 0 0 3px rgba(220,190,210,0.15) !important;
-    }
-
-
-    /* ========================================================
-       PROGRESS BAR
-       ======================================================== */
-
-    .progress-text {
 
         text-align: center;
 
-        font-size: 0.85rem;
+        color: #796f78 !important;
 
-        color: #aaa0a8;
+        font-family: 'Quicksand', sans-serif !important;
 
-        margin-bottom: 8px;
-    }
-
-
-    /* ========================================================
-       DIVIDER
-       ======================================================== */
-
-    .soft-divider {
-
-        height: 1px;
-
-        background:
-            linear-gradient(
-                90deg,
-                transparent,
-                #eadde6,
-                transparent
-            );
-
-        margin: 25px 0;
+        font-weight: 700;
     }
 
 
@@ -2164,34 +2272,37 @@ st.markdown(
     @media (max-width: 600px) {
 
         .block-container {
-            padding: 1rem;
+            padding: 1rem 0.8rem 3rem 0.8rem;
         }
 
-        .pastel-card {
-            padding: 28px 20px;
-            border-radius: 25px;
+        .glass-card {
+            padding: 30px 20px;
+            border-radius: 28px;
         }
 
         .main-title {
-            font-size: 2.5rem;
-        }
-
-        .script-title {
-            font-size: 2.1rem;
-        }
-
-        .section-title {
-            font-size: 2rem;
-        }
-
-        .final-name {
             font-size: 2.6rem;
         }
 
-        .wish-text {
-            font-size: 1.3rem;
+        .script-title {
+            font-size: 2.25rem;
         }
 
+        .heart {
+            font-size: 4rem;
+        }
+
+        .wish-message {
+            font-size: 1.4rem;
+        }
+
+        .final-name {
+            font-size: 2.7rem;
+        }
+
+        .final-card {
+            padding: 40px 20px;
+        }
     }
 
     </style>
@@ -2206,10 +2317,11 @@ st.markdown(
 
 st.markdown(
     """
-    <div class="floating flower1">🌸</div>
-    <div class="floating flower2">🦋</div>
-    <div class="floating flower3">🌷</div>
-    <div class="floating flower4">✨</div>
+    <div class="floating f1">🌸</div>
+    <div class="floating f2">🦋</div>
+    <div class="floating f3">🌷</div>
+    <div class="floating f4">✨</div>
+    <div class="floating f5">💗</div>
     """,
     unsafe_allow_html=True
 )
@@ -2220,63 +2332,34 @@ st.markdown(
 # ============================================================
 
 wishes = [
-
-    "இனிய பிறந்தநாள் வாழ்த்துக்கள்! 💗",
-
-    "పుట్టినరోజు శుభాకాంక్షలు! 🎂",
-
-    "ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು! 🌸",
-
-    "ജന്മദിനാശംസകൾ! 💕",
-
-    "जन्मदिन की शुभकामनाएँ! ✨",
-
-    "শুভ জন্মদিন! 🌷",
-
-    "वाढदिवसाच्या हार्दिक शुभेच्छा! 💫",
-
-    "ਜਨਮਦਿਨ ਮੁਬਾਰਕ! 💗",
-
-    "જન્મદિવસની શુભકામનાઓ! 🌸",
-
-    "Happy Birthday! 🎂",
-
-    "Joyeux anniversaire! 🌷",
-
-    "¡Feliz cumpleaños! 💕",
-
-    "Buon compleanno! ✨",
-
-    "Alles Gute zum Geburtstag! 🌸",
-
-    "Feliz aniversário! 💗",
-
-    "生日快乐！🎂",
-
-    "お誕生日おめでとう！🌸",
-
-    "생일 축하해! 💕",
-
-    "عيد ميلاد سعيد! ✨",
-
-    "Doğum günün kutlu olsun! 🌷",
-
-    "С днём рождения! 💗",
-
-    "Χρόνια πολλά! 🎂",
-
-    "Fijne verjaardag! 🌸",
-
-    "Grattis på födelsedagen! 💕",
-
-    "สุขสันต์วันเกิด! ✨",
-
-    "Chúc mừng sinh nhật! 🌷",
-
-    "Selamat ulang tahun! 💗",
-
-    "Maligayang kaarawan! 🎂",
-
+    ("Tamil", "இனிய பிறந்தநாள் வாழ்த்துக்கள்! 💗"),
+    ("Telugu", "పుట్టినరోజు శుభాకాంక్షలు! 🎂"),
+    ("Kannada", "ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು! 🌸"),
+    ("Malayalam", "ജന്മദിനാശംസകൾ! 💕"),
+    ("Hindi", "जन्मदिन की शुभकामनाएँ! ✨"),
+    ("Bengali", "শুভ জন্মদিন! 🌷"),
+    ("Marathi", "वाढदिवसाच्या हार्दिक शुभेच्छा! 💫"),
+    ("Punjabi", "ਜਨਮਦਿਨ ਮੁਬਾਰਕ! 💗"),
+    ("Gujarati", "જન્મદિવસની શુભકામનાઓ! 🌸"),
+    ("English", "Happy Birthday! 🎂"),
+    ("French", "Joyeux anniversaire! 🌷"),
+    ("Spanish", "¡Feliz cumpleaños! 💕"),
+    ("Italian", "Buon compleanno! ✨"),
+    ("German", "Alles Gute zum Geburtstag! 🌸"),
+    ("Portuguese", "Feliz aniversário! 💗"),
+    ("Chinese", "生日快乐！🎂"),
+    ("Japanese", "お誕生日おめでとう！🌸"),
+    ("Korean", "생일 축하해! 💕"),
+    ("Arabic", "عيد ميلاد سعيد! ✨"),
+    ("Turkish", "Doğum günün kutlu olsun! 🌷"),
+    ("Russian", "С днём рождения! 💗"),
+    ("Greek", "Χρόνια πολλά! 🎂"),
+    ("Dutch", "Fijne verjaardag! 🌸"),
+    ("Swedish", "Grattis på födelsedagen! 💕"),
+    ("Thai", "สุขสันต์วันเกิด! ✨"),
+    ("Vietnamese", "Chúc mừng sinh nhật! 🌷"),
+    ("Indonesian", "Selamat ulang tahun! 💗"),
+    ("Filipino", "Maligayang kaarawan! 🎂"),
 ]
 
 
@@ -2285,21 +2368,25 @@ wishes = [
 # ============================================================
 
 funny_messages = [
-
     "Congratulations! 🎉 You have successfully unlocked another year of being older... but hopefully not wiser. 😂",
 
-    "Age is just a number. Unfortunately, yours is starting to look like a password. 😌",
+    "Age is just a number. Unfortunately, yours is starting to look suspiciously like a password. 😌",
 
     "Don't worry about getting older. You're still young enough to make questionable decisions. 😂",
 
-    "Another year older, another year of pretending you know what you're doing. 😎",
+    "Another year older. Another year of pretending you know exactly what you're doing. 😎",
 
     "Happy Birthday! May your phone battery last longer than your patience. 🔋😂",
 
     "You're not getting old... you're becoming a limited edition. ✨",
 
-    "Today is your special day. So yes, you are officially allowed to be extra dramatic. 😌",
+    "Today is your special day, so you are officially allowed to be extra dramatic. 😌",
 
+    "At this point, cake is basically a personality trait. 🎂😂",
+
+    "One more year of existence and still no instruction manual. Impressive. 😂",
+
+    "Don't count the candles. Just enjoy the cake before someone else does. 👀🎂",
 ]
 
 
@@ -2311,12 +2398,18 @@ if st.session_state.page == "password":
 
     st.markdown(
         """
-        <div class="pastel-card">
+        <div class="glass-card">
 
-            <div class="big-heart">💗</div>
+            <div class="top-decoration">
+                🌸 ✨ 🌷
+            </div>
 
-            <div class="password-title">
-                Waittt... 👀
+            <div class="lock">
+                🔐
+            </div>
+
+            <div class="script-title">
+                Psssst...
             </div>
 
             <div class="main-title">
@@ -2324,15 +2417,17 @@ if st.session_state.page == "password":
             </div>
 
             <p class="subtitle">
-                There is a tiny secret hiding here...
+                There is a tiny little surprise hiding here.
                 <br>
-                But only one very special person can unlock it. ✨
+                But obviously...
+                <br>
+                I can't just let anyone open it. 👀
             </p>
 
-            <div class="soft-divider"></div>
+            <div class="divider"></div>
 
             <p class="cute-text">
-                🔐 Enter the secret code
+                Only one person knows the secret code. 💗
             </p>
 
         </div>
@@ -2341,13 +2436,13 @@ if st.session_state.page == "password":
     )
 
     password = st.text_input(
-        "Password",
+        "Secret password",
         type="password",
-        label_visibility="collapsed",
-        placeholder="Enter the secret code..."
+        placeholder="Enter the secret code...",
+        label_visibility="collapsed"
     )
 
-    if st.button("✨ Unlock the surprise ✨"):
+    if st.button("🔓 Unlock the surprise"):
 
         if password == PASSWORD:
 
@@ -2359,17 +2454,22 @@ if st.session_state.page == "password":
 
             st.session_state.password_attempts += 1
 
-            if st.session_state.password_attempts == 1:
+            attempts = st.session_state.password_attempts
 
-                st.warning("Hmmmm... nope 😌 Try again.")
+            if attempts == 1:
+                st.warning("Hmmmm... nope 😌 Think again.")
 
-            elif st.session_state.password_attempts == 2:
+            elif attempts == 2:
+                st.info("You're getting closer... maybe. 👀")
 
-                st.info("Okay okay... think carefully 👀")
+            elif attempts == 3:
+                st.warning("Okay Brightuuuu... seriously? 😂")
 
             else:
-
-                st.error("Aiyo! Wrong again 😂")
+                st.error(
+                    "Wrong again! I'm starting to question whether "
+                    "you deserve this surprise. 😭😂"
+                )
 
 
 # ============================================================
@@ -2380,34 +2480,52 @@ elif st.session_state.page == "entry_reaction":
 
     st.markdown(
         """
-        <div class="pastel-card">
+        <div class="glass-card">
 
-            <div class="big-heart">🥹</div>
+            <div class="top-decoration">
+                ✨ 🌸 ✨
+            </div>
+
+            <div class="heart">
+                🥹
+            </div>
 
             <div class="script-title">
                 You actually made it!
             </div>
 
             <p class="subtitle">
-                I was wondering if you would figure that out...
-            </p>
-
-            <div class="soft-divider"></div>
-
-            <p class="soft-text">
-                Okay fine.
+                I knew you would figure it out...
                 <br>
-                Since you are here...
-                <br><br>
-                I have something to tell you. 💗
+                eventually. 😌
             </p>
+
+            <div class="divider"></div>
+
+            <div class="soft-text">
+
+                Okay.
+
+                <br><br>
+
+                No more secrets.
+
+                <br><br>
+
+                Well...
+
+                <br>
+
+                maybe one or two more. 👀
+
+            </div>
 
         </div>
         """,
         unsafe_allow_html=True
     )
 
-    if st.button("Okay... tell me 👀"):
+    if st.button("Okay... what is this? 👀"):
 
         st.session_state.page = "welcome"
 
@@ -2422,32 +2540,48 @@ elif st.session_state.page == "welcome":
 
     st.markdown(
         """
-        <div class="pastel-card">
+        <div class="glass-card">
 
-            <div class="script-title">
-                Helloooo Brightuuuu 💗
+            <div class="top-decoration">
+                🌷 💗 🌷
             </div>
 
-            <div class="big-heart">
+            <div class="script-title">
+                Helloooo Brightuuuu
+            </div>
+
+            <div class="heart">
                 🫶
             </div>
 
             <p class="subtitle">
-                Today isn't just another day.
+                Today isn't just another ordinary day.
             </p>
 
-            <p class="soft-text">
-                Because today happens to be the day
-                <br>
-                one very special human came into this world. 🌸
-            </p>
+            <div class="memory-card">
 
-            <div class="soft-divider"></div>
+                <div class="memory-line">
+
+                    Today is the day
+                    <br>
+                    one very special human
+                    <br>
+                    decided to show up in this world. 🌸
+
+                </div>
+
+            </div>
 
             <p class="cute-text">
+
                 And yes...
+
                 <br>
-                this little surprise is for YOU. ✨
+
+                this ridiculously unnecessary little website
+                <br>
+                is completely for YOU. 💗
+
             </p>
 
         </div>
@@ -2455,7 +2589,7 @@ elif st.session_state.page == "welcome":
         unsafe_allow_html=True
     )
 
-    if st.button("Continue the surprise 🌷"):
+    if st.button("Continue... 🌸"):
 
         st.session_state.page = "funny"
 
@@ -2468,33 +2602,43 @@ elif st.session_state.page == "welcome":
 
 elif st.session_state.page == "funny":
 
-    message = funny_messages[
-        st.session_state.funny_index
-    ]
+    index = st.session_state.funny_index
+
+    message = funny_messages[index]
 
     st.markdown(
         f"""
-        <div class="pastel-card">
+        <div class="glass-card">
 
-            <div class="section-title">
-                Before we get emotional...
+            <div class="top-decoration">
+                😂 🌷 😂
             </div>
 
-            <p class="soft-text">
-                Let's address the important things first. 😌
+            <div class="script-title">
+                But first...
+            </div>
+
+            <p class="subtitle">
+                Before this gets unnecessarily emotional,
+                <br>
+                we need to discuss some important facts.
             </p>
 
             <div class="funny-card">
 
-                <div class="big-heart">
-                    😂
+                <div class="funny-number">
+                    Important Birthday Fact #{index + 1}
                 </div>
 
-                <div class="funny-text">
+                <div class="funny-message">
                     {message}
                 </div>
 
             </div>
+
+            <p class="soft-text">
+                Don't worry. There are more. 😌
+            </p>
 
         </div>
         """,
@@ -2515,7 +2659,7 @@ elif st.session_state.page == "funny":
 
     with col2:
 
-        if st.button("Okay okay 😌"):
+        if st.button("Okay enough 😂"):
 
             st.session_state.page = "wishes"
 
@@ -2523,45 +2667,49 @@ elif st.session_state.page == "funny":
 
 
 # ============================================================
-# PAGE 5 — WISHES
+# PAGE 5 — MULTILINGUAL WISHES
 # ============================================================
 
 elif st.session_state.page == "wishes":
 
-    wish = wishes[
-        st.session_state.wish_index
-    ]
+    index = st.session_state.wish_index
 
-    progress = (
-        st.session_state.wish_index + 1
-    )
+    language, message = wishes[index]
 
     total = len(wishes)
 
     st.markdown(
         f"""
-        <div class="pastel-card">
+        <div class="glass-card">
 
-            <div class="section-title">
-                A little birthday magic 🌸
+            <div class="top-decoration">
+                🌍 ✨ 🌸
             </div>
 
-            <p class="progress-text">
-                Wish {progress} of {total}
+            <div class="script-title">
+                One birthday...
+            </div>
+
+            <p class="subtitle">
+                So many languages.
+                <br>
+                Because apparently one wish wasn't enough. 💗
             </p>
 
             <div class="wish-card">
 
-                <div class="wish-text">
-                    {wish}
+                <div class="wish-language">
+                    {language}
+                </div>
+
+                <div class="wish-message">
+                    {message}
                 </div>
 
             </div>
 
             <p class="soft-text">
-                Because one birthday wish
-                <br>
-                is obviously not enough. 💗
+                Wish {index + 1} of {total}
             </p>
 
         </div>
@@ -2569,9 +2717,9 @@ elif st.session_state.page == "wishes":
         unsafe_allow_html=True
     )
 
-    if st.session_state.wish_index < total - 1:
+    if index < total - 1:
 
-        if st.button("🌷 Next wish"):
+        if st.button("🌷 Next birthday wish"):
 
             st.session_state.wish_index += 1
 
@@ -2579,7 +2727,7 @@ elif st.session_state.page == "wishes":
 
     else:
 
-        if st.button("💗 There's more..."):
+        if st.button("💗 One last thing..."):
 
             st.session_state.page = "final_intro"
 
@@ -2587,16 +2735,20 @@ elif st.session_state.page == "wishes":
 
 
 # ============================================================
-# PAGE 6 — FINAL INTRO
+# PAGE 6 — EMOTIONAL INTRO
 # ============================================================
 
 elif st.session_state.page == "final_intro":
 
     st.markdown(
         """
-        <div class="pastel-card">
+        <div class="glass-card">
 
-            <div class="big-heart">
+            <div class="top-decoration">
+                ✨ 🌸 ✨
+            </div>
+
+            <div class="heart">
                 🥹
             </div>
 
@@ -2605,21 +2757,39 @@ elif st.session_state.page == "final_intro":
             </div>
 
             <p class="subtitle">
-                Enough of the jokes.
+                That's enough teasing.
             </p>
 
-            <div class="soft-divider"></div>
+            <div class="divider"></div>
 
-            <p class="soft-text">
+            <div class="memory-card">
 
-                There is one last thing.
+                <div class="memory-line">
 
-                <br><br>
+                    Jokes apart...
 
-                And this one is a little more
+                    <br><br>
+
+                    I really hope this new year of your life
+                    <br>
+                    gives you beautiful things.
+
+                    <br><br>
+
+                    More smiles.
+                    <br>
+                    More memories.
+                    <br>
+                    More reasons to be happy.
+
+                </div>
+
+            </div>
+
+            <p class="cute-text">
+                And now...
                 <br>
-                from the heart. 💗
-
+                the actual birthday message. 💗
             </p>
 
         </div>
@@ -2627,7 +2797,7 @@ elif st.session_state.page == "final_intro":
         unsafe_allow_html=True
     )
 
-    if st.button("Open the last surprise ✨"):
+    if st.button("Open it... 💌"):
 
         st.session_state.page = "final"
 
@@ -2644,64 +2814,83 @@ elif st.session_state.page == "final":
         """
         <div class="final-card">
 
-            <div style="font-size:4rem;">
+            <div class="cake">
                 🎂
+            </div>
+
+            <div class="top-decoration">
+                🌸 ✨ 🌷
             </div>
 
             <div class="final-name">
                 Brightuuuu
             </div>
 
-            <div class="big-heart">
-                💗
+            <div class="final-heading">
+                Happy Birthday! 💗
             </div>
+
+            <div class="heart">
+                🫶
+            </div>
+
+            <div class="divider"></div>
 
             <div class="final-message">
 
-                Happy Birthday! 🌷
-
-                <br><br>
-
                 I hope this year brings you
                 <br>
-                more happiness,
-                more laughter,
-                more beautiful memories,
-                and plenty of reasons to smile.
+                countless little moments
+                <br>
+                that make you genuinely happy.
 
                 <br><br>
 
-                Stay exactly the way you are...
+                I hope you laugh a little louder,
                 <br>
-                because honestly,
+                smile a little more,
                 <br>
-                you're pretty special. ✨
+                worry a little less,
+                <br>
+                and create memories
+                <br>
+                you'll want to keep forever. 🌷
 
                 <br><br>
 
-                And yes...
-
+                May the things you wish for
                 <br>
+                slowly find their way to you.
 
-                <span style="
-                    font-family:'Pacifico', cursive;
-                    color:#c18ca5;
-                    font-size:1.8rem;
-                ">
-                    Happy Birthday, Brightuuuu 💕
-                </span>
+                <br><br>
+
+                And whenever life gets a little difficult,
+                <br>
+                I hope you remember
+                <br>
+                that there are people
+                <br>
+                who are genuinely happy
+                <br>
+                that you exist. 💗
 
             </div>
 
-            <div class="soft-divider"></div>
+            <div class="divider"></div>
 
-            <p class="soft-text">
-                Made with a little bit of madness,
+            <div class="small-script">
+                Stay happy. Stay crazy.
                 <br>
-                a lot of affection,
-                <br>
-                and way too many birthday wishes. 🌸
-            </p>
+                Stay Brightuuuu. ✨
+            </div>
+
+            <div class="signature">
+                Happy Birthday 💕
+            </div>
+
+            <div class="top-decoration">
+                🌸 💗 🌸
+            </div>
 
         </div>
         """,
@@ -2710,9 +2899,11 @@ elif st.session_state.page == "final":
 
     st.write("")
 
-    if st.button("🌸 Start again"):
+    if st.button("🌷 Start the surprise again"):
 
-        for key, value in defaults.items():
+        for key, value in DEFAULTS.items():
             st.session_state[key] = value
+
+        st.rerun()
 
         st.rerun()
