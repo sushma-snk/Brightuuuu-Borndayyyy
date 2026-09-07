@@ -2356,7 +2356,6 @@ wishes = [
     # ========================================================
 
     {
-        "language": "Tamil",
         "place": "Tamil Nadu",
         "wish": "இனிய பிறந்தநாள் வாழ்த்துக்கள்!",
         "subtitle": "Iniya pirandhanaal vaazhthukkal!",
@@ -2366,7 +2365,7 @@ wishes = [
 
     {
         "language": "Telugu",
-        "place": "Andhra Pradesh",
+        "place": "Andhra Pradesh/Telangana",
         "wish": "పుట్టినరోజు శుభాకాంక్షలు!",
         "subtitle": "Puttinaroju shubhakankshalu!",
         "emoji": "🌼",
@@ -3733,6 +3732,8 @@ elif st.session_state.page == "entry_reaction":
             <br>
             Okayyy... I'm impressed. 👏😂
             <span style="font-size:19px;">
+            <br>
+
             That's exactly how I wanted you to enter.
             </span>
             <br>
@@ -4493,17 +4494,12 @@ elif st.session_state.page == "final_intro":
 
         <br><br>
 
-        I think it's time for the one wish
-        that actually matters.
+        I think it's time for the actual "SURPRISE" (I think so).
 
         <br><br>
 
         <span style="font-size:19px;">
-        No more destinations.
         </span>
-
-        <br>
-
         <span style="font-size:19px;">
         Just one birthday wish from me to you.
         </span>
@@ -4563,21 +4559,21 @@ elif st.session_state.page == "final":
         </div>
 
         <div class="final-title">
-        HAPPY BIRTHDAY, BRIGHTUUUU!!
+        HAPPY BIRTHDAY, TEJESH✨!!
         </div>
 
         <div class="final-message">
 
-        I hope your day is filled with
-        happiness, laughter, good food,
-        good people and lots of little moments
-        that make you smile.
-
+        Naa nenachikooda paakala, ivlo seekram naa oruthara trust pannuven, ennaiye kudupen nu..
+        Unga ella journey layum naa irukanum nu asaipaduren..
+        No matter what, ungla ennaikum eppavum vittukudukamaaten..
+        You are a GEM..
+        
         <br><br>
 
-        I hope the year ahead brings you
-        wonderful memories, exciting things,
-        and plenty of reasons to be happy.
+        I will try my best to make you feel special, happy..
+        Sometimes mudiyadhu but that okay, ellame part of life..
+        I hope the year (or maybe I) will bring you wonderful memories, exciting things, and plenty of reasons to be happy.
 
         <br><br>
 
