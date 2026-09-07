@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 import time
 
@@ -2301,7 +2300,7 @@ elif st.session_state.page == "final":
         """,
         unsafe_allow_html=True
     )
-```
+
 
 
 # import streamlit as st
