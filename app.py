@@ -3874,8 +3874,12 @@ elif st.session_state.page == "welcome":
             font-size:20px;
             line-height:1.9;
         ">
+        <h2 style="
+            text-align:center;
+            font-family:'Playfair Display', serif;
+        ">
 
-        ENNAVARUKKAGA..
+        ENNAVARE..
 
         </p>
 
