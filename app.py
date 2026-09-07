@@ -135,7 +135,6 @@ wishes = [
     {
         "language": "English",
         "wish": "Happy Birthday!",
-        "subtitle": "Happy Birthday!",
         "emoji": "🎂",
         "theme": "theme-birthday"
     },
