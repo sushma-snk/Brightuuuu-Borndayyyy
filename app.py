@@ -3875,15 +3875,7 @@ elif st.session_state.page == "welcome":
             line-height:1.9;
         ">
 
-        I could have just typed "Happy Birthday!" and sent it to you.
-
-        <br><br>
-
-        But apparently that was not enough. 😂
-
-        <br><br>
-
-        So I made you something a little different.
+        ENNAVARUKKAGA..
 
         </p>
 
