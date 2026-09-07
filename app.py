@@ -4568,7 +4568,7 @@ elif st.session_state.page == "final":
         <br>
         <b>You are a GEM.</b>
         
-        <br><br>
+        <br>
 
         I will try my best to make you feel special and happy..
         Sometimes mudiyadhu but that's okay, ellame part of life dhana..
@@ -4580,9 +4580,9 @@ elif st.session_state.page == "final":
         Have a really, really wonderful birthday. ❤️
 
         <br>
-        And don't forget to ask for your birthday gift from the the person standing/sitting right in front of you!!
+        And don't forget to ask for your birthday gift from the person standing/sitting right in front of you!!
 
-        <br><br>
+        <br>
 
         <b>Enjoy your life, Brightuuuu! 🎂✨</b>
         
