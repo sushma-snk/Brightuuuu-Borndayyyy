@@ -1947,21 +1947,9 @@ funny_messages = [
     },
 
     {
-        "emoji": "😌",
-        "title": "One small warning...",
-        "message": "There might be a tiny amount of nonsense involved."
-    },
-
-    {
-        "emoji": "😂",
-        "title": "Actually...",
-        "message": "There is definitely a tiny amount of nonsense involved."
-    },
-
-    {
         "emoji": "❤️",
         "title": "But seriously...",
-        "message": "I wanted to make your birthday a little different this year."
+        "message": "I wanted to make your birthday a little different."
     },
 
     {
@@ -3215,7 +3203,7 @@ elif st.session_state.page == "funny":
     st.markdown(
         """
         <div class="subtitle">
-        Before the actual surprise...
+        Made with you in mind...
         </div>
         """,
         unsafe_allow_html=True
