@@ -4563,24 +4563,29 @@ elif st.session_state.page == "final":
         <div class="final-message">
 
         Naa nenachikooda paakala, ivlo seekram naa oruthara trust pannuven, ennaiye kudupen nu..
-        Unga ella journey layum naa irukanum nu asaipaduren..
-        No matter what, ungla ennaikum eppavum vittukudukamaaten..
-        You are a GEM..
+        Unga ella journey layum naa irukanum nu asaipaduren..❤️
+        No matter what, ungala ennaikkum eppavum vittukudukka maaten..
+        <br>
+        <b>You are a GEM.</b>
         
         <br><br>
 
-        I will try my best to make you feel special, happy..
-        Sometimes mudiyadhu but that okay, ellame part of life..
-        I hope the year (or maybe I) will bring you wonderful memories, exciting things, and plenty of reasons to be happy.
+        I will try my best to make you feel special and happy..
+        Sometimes mudiyadhu but that's okay, ellame part of life dhana..
+        <br>
+        I hope this year (or maybe I) will bring you wonderful memories, exciting things, and plenty of reasons to be happy.
 
-        <br><br>
+        <br>
 
         Have a really, really wonderful birthday. ❤️
 
+        <br>
+        And don't forget to ask for your birthday gift from the the person standing/sitting right in front of you!!
+
         <br><br>
 
-        <b>Enjoy your day, Brightuuuu! 🎂✨</b>
-
+        <b>Enjoy your life, Brightuuuu! 🎂✨</b>
+        
         </div>
 
         </div>
