@@ -1201,7 +1201,7 @@ footer {
 if st.session_state.page == "password":
 
     st.markdown(
-        '<div class="main-title">✨ Something Made Just For You ✨</div>',
+        '<div class="main-title">✨ Made Just For You ✨</div>',
         unsafe_allow_html=True
     )
 
@@ -1222,7 +1222,7 @@ if st.session_state.page == "password":
             text-align:center;
             font-family:'Playfair Display', serif;
         ">
-        Hey THANGA PULLA..!!
+        HAPPY BIRTHDAY EN THANGA PULLA..!!
         </h2>
 
         <p style="
