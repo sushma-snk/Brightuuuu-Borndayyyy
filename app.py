@@ -341,7 +341,7 @@ funny_messages = [
     {
         "emoji": "😂",
         "title": "En AMMU KUTTY..",
-        "message": "I could have simply wished you "Happy Birthday!"."
+        "message": "I could have simply wished you <b>Happy Birthday!</b>."
     },
 
     {
