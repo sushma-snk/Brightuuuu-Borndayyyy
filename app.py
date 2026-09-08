@@ -1230,15 +1230,12 @@ if st.session_state.page == "password":
             color:#f8dfeb;
             font-size:18px;
             line-height:1.8;
-        ">   
-
-        <h2 style="
-            text-align:center;
         ">
-            
+        
         Before you enter, there's just one tiny problem...
         <br>
         <b>You need the secret password.</b>
+        <br>
         (Kutty change in password)
 
         </p>
