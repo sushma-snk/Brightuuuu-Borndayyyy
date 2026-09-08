@@ -53,7 +53,7 @@ wishes = [
     # ========================================================
 
     {
-        "language": "Tamil",
+        "language": "THANGAMEY",
         "place": "Tamil Nadu",
         "wish": "இனிய பிறந்தநாள் வாழ்த்துக்கள்!",
         "subtitle": "Iniya pirandhanaal vaazhthukkal!",
@@ -62,7 +62,7 @@ wishes = [
     },
 
     {
-        "language": "Telugu",
+        "language": "BUJJI",
         "place": "Andhra Pradesh/Telangana",
         "wish": "పుట్టినరోజు శుభాకాంక్షలు!",
         "subtitle": "Puttinaroju shubhakankshalu!",
@@ -71,7 +71,7 @@ wishes = [
     },
 
     {
-        "language": "Kannada",
+        "language": "APPU",
         "place": "Karnataka",
         "wish": "ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು!",
         "subtitle": "Huttuhabbada shubhashayagalu!",
@@ -80,7 +80,7 @@ wishes = [
     },
 
     {
-        "language": "Malayalam",
+        "language": "MONE",
         "place": "Kerala",
         "wish": "ജന്മദിനാശംസകൾ!",
         "subtitle": "Janmadinaashamsakal!",
@@ -93,8 +93,8 @@ wishes = [
     # ========================================================
 
     {
-        "language": "Hindi",
-        "place": "India",
+        "language": "PYAARE",
+        "place": "Vadakkanss",
         "wish": "जन्मदिन मुबारक हो!",
         "subtitle": "Janmadin mubarak ho!",
         "emoji": "🪷",
@@ -102,7 +102,7 @@ wishes = [
     },
 
     {
-        "language": "Bengali",
+        "language": "KUTTIMA",
         "place": "West Bengal",
         "wish": "শুভ জন্মদিন!",
         "subtitle": "Shubho jonmodin!",
@@ -111,7 +111,7 @@ wishes = [
     },
 
     {
-        "language": "Marathi",
+        "language": "TEJU KANNA",
         "place": "Maharashtra",
         "wish": "वाढदिवसाच्या हार्दिक शुभेच्छा!",
         "subtitle": "Vaadhdivsachya haardik shubhechha!",
@@ -120,7 +120,7 @@ wishes = [
     },
 
     {
-        "language": "Punjabi",
+        "language": "PAPPU KUTTY",
         "place": "Punjab",
         "wish": "ਜਨਮਦਿਨ ਮੁਬਾਰਕ!",
         "subtitle": "Janamdin mubarak!",
@@ -129,7 +129,7 @@ wishes = [
     },
 
     {
-        "language": "Gujarati",
+        "language": "CHELLAME",
         "place": "Gujarat",
         "wish": "જન્મદિવસની શુભકામનાઓ!",
         "subtitle": "Janmadivasni shubhakaamanaao!",
@@ -142,16 +142,16 @@ wishes = [
     # ========================================================
 
     {
-        "language": "English",
+        "language": "BABE",
         "place": "England",
         "wish": "Happy Birthday!",
-        "subtitle": "Happy Birthday!",
+        "subtitle": "Happy Happy Birthday!",
         "emoji": "🎂",
         "theme": "theme-birthday"
     },
 
     {
-        "language": "French",
+        "language": "MON AMOUR",
         "place": "France",
         "wish": "Joyeux anniversaire !",
         "subtitle": "Jwayeuh ahniversair!",
@@ -160,7 +160,7 @@ wishes = [
     },
 
     {
-        "language": "Japanese",
+        "language": "TEJESH-KUN",
         "place": "Japan",
         "wish": "お誕生日おめでとう！",
         "subtitle": "Otanjoubi omedetou!",
@@ -169,8 +169,8 @@ wishes = [
     },
 
     {
-        "language": "Korean",
-        "place": "South Korea",
+        "language": "NAE SARANG",
+        "place": "Korea",
         "wish": "생일 축하해요!",
         "subtitle": "Saengil chukahaeyo!",
         "emoji": "✨",
@@ -178,7 +178,7 @@ wishes = [
     },
 
     {
-        "language": "Spanish",
+        "language": "MI AMOR",
         "place": "Spain",
         "wish": "¡Feliz cumpleaños!",
         "subtitle": "Feliz cumpleaños!",
@@ -187,7 +187,7 @@ wishes = [
     },
 
     {
-        "language": "Italian",
+        "language": "AMORE MIO",
         "place": "Italy",
         "wish": "Buon compleanno!",
         "subtitle": "Buon compleanno!",
@@ -196,7 +196,7 @@ wishes = [
     },
 
     {
-        "language": "German",
+        "language": "MEINE LIEBE",
         "place": "Germany",
         "wish": "Alles Gute zum Geburtstag!",
         "subtitle": "Alles Gute zum Geburtstag!",
@@ -205,7 +205,7 @@ wishes = [
     },
 
     {
-        "language": "Portuguese",
+        "language": "MEU AMOR",
         "place": "Portugal",
         "wish": "Feliz aniversário!",
         "subtitle": "Feliz aniversario!",
@@ -214,7 +214,7 @@ wishes = [
     },
 
     {
-        "language": "Chinese",
+        "language": "Qīn'ài de",
         "place": "China",
         "wish": "生日快乐！",
         "subtitle": "Shengri kuaile!",
@@ -223,8 +223,8 @@ wishes = [
     },
 
     {
-        "language": "Arabic",
-        "place": "Arab Countries",
+        "language": "HABIBI",
+        "place": "UAE",
         "wish": "عيد ميلاد سعيد!",
         "subtitle": "Eid milad sa'eed!",
         "emoji": "✨",
@@ -232,7 +232,7 @@ wishes = [
     },
 
     {
-        "language": "Turkish",
+        "language": "Aşkım",
         "place": "Turkey",
         "wish": "Doğum günün kutlu olsun!",
         "subtitle": "Dogum gunun kutlu olsun!",
@@ -241,7 +241,7 @@ wishes = [
     },
 
     {
-        "language": "Russian",
+        "language": "LYUBOV MOYA",
         "place": "Russia",
         "wish": "С днём рождения!",
         "subtitle": "S dnyom rozhdeniya!",
@@ -250,7 +250,7 @@ wishes = [
     },
 
     {
-        "language": "Greek",
+        "language": "PSYHI MOU",
         "place": "Greece",
         "wish": "Χρόνια πολλά!",
         "subtitle": "Chronia polla!",
@@ -259,7 +259,7 @@ wishes = [
     },
 
     {
-        "language": "Dutch",
+        "language": "MIJN LIEFJE",
         "place": "Netherlands",
         "wish": "Gefeliciteerd met je verjaardag!",
         "subtitle": "Gefeliciteerd met je verjaardag!",
@@ -268,7 +268,7 @@ wishes = [
     },
 
     {
-        "language": "Swedish",
+        "language": "Min kärlek",
         "place": "Sweden",
         "wish": "Grattis på födelsedagen!",
         "subtitle": "Grattis pa fodelsedagen!",
@@ -277,7 +277,7 @@ wishes = [
     },
 
     {
-        "language": "Thai",
+        "language": "Thī̀rạk",
         "place": "Thailand",
         "wish": "สุขสันต์วันเกิด!",
         "subtitle": "Suk san wan geert!",
@@ -286,7 +286,7 @@ wishes = [
     },
 
     {
-        "language": "Vietnamese",
+        "language": "Chồng yêu",
         "place": "Vietnam",
         "wish": "Chúc mừng sinh nhật!",
         "subtitle": "Chuc mung sinh nhat!",
@@ -295,7 +295,7 @@ wishes = [
     },
 
     {
-        "language": "Indonesian",
+        "language": "Sayangku",
         "place": "Indonesia",
         "wish": "Selamat ulang tahun!",
         "subtitle": "Selamat ulang tahun!",
@@ -304,7 +304,7 @@ wishes = [
     },
 
     {
-        "language": "Filipino",
+        "language": "Mahal ko",
         "place": "Philippines",
         "wish": "Maligayang kaarawan!",
         "subtitle": "Maligayang kaarawan!",
@@ -313,8 +313,8 @@ wishes = [
     },
 
     {
-        "language": "Latin",
-        "place": "Ancient Rome",
+        "language": "AMICA MEA",
+        "place": "Rome",
         "wish": "Felix natalis!",
         "subtitle": "Felix natalis!",
         "emoji": "🌿",
@@ -322,7 +322,7 @@ wishes = [
     },
 
     {
-        "language": "Irish",
+        "language": "MUH GRAW",
         "place": "Ireland",
         "wish": "Lá breithe sona duit!",
         "subtitle": "Law breh-heh suna ditch!",
@@ -340,31 +340,31 @@ funny_messages = [
 
     {
         "emoji": "😂",
-        "title": "First things first...",
-        "message": "I could have simply wished you Happy Birthday."
+        "title": "En AMMU KUTTY..",
+        "message": "I could have simply wished you "Happy Birthday!"."
     },
 
     {
         "emoji": "🤦‍♀️",
-        "title": "But obviously you know me...",
-        "message": "That would have been far too normal."
+        "title": "But obviously you know me la THANGOO..",
+        "message": "That would have been too normal."
     },
 
     {
         "emoji": "🌍",
-        "title": "So I had an idea...",
+        "title": "Soooo.. PATTU KUTTY",
         "message": "Why stop at one birthday wish when we can go around the world?"
     },
 
-    {
-        "emoji": "👀",
-        "title": "Don't worry...",
-        "message": "You don't have to pack your bags."
-    },
+    # {
+    #     "emoji": "👀",
+    #     "title": "Don't worry TEJU MA..",
+    #     "message": "You don't have to pack your bags.."
+    # },
 
     {
         "emoji": "✨",
-        "title": "So here we go...",
+        "title": "Here we go!! THANGAMEYY..",
         "message": "Just keep pressing NEXT."
     }
 ]
@@ -2190,16 +2190,16 @@ elif st.session_state.page == "final_intro":
 
         <b>And after travelling all this way...</b>
 
-        <br><br>
-
-        I think it's time for the actual "SURPRISE" (I think so).
-
-        <br><br>
-
         <span style="font-size:19px;">
         </span>
         <span style="font-size:19px;">
-        Just one birthday wish from me to you.
+        Just one birthday wish from..
+        <br>
+        <b>ME (THANGA POOVU)</b>
+        <br>
+        to
+        <br>
+        <b>YOU (THANGA PULLA)</b>
         </span>
 
         </div>
@@ -2257,7 +2257,7 @@ elif st.session_state.page == "final_intro":
 #         </div>
 
 #         <div class="final-title">
-#         HAPPY BIRTHDAY, TEJESH✨!!
+#         HAPPY BIRTHDAY, TEJESHHHH..✨!!
 #         </div>
 
 #         <div class="final-message">
@@ -2342,24 +2342,26 @@ elif st.session_state.page == "final":
         <div class="final-message">
 
         Naa nenachikooda paakala, ivlo seekram naa oruthara trust pannuven, ennaiye kudupen nu..
+        <br>
         Unga ella journey layum naa irukanum nu asaipaduren..❤️
-        No matter what, ungala ennaikkum eppavum vittukudukka maaten..
+        <br>
+        No matter what, ungala ennaikkum eppavum yaarukum vittukudukka maatten..
         <br>
         <b>You are a GEM.</b>
         
         <br>
 
-        I will try my best to make you feel special and happy..
-        Sometimes mudiyadhu but that's okay, ellame part of life dhana..
+        I will try my best to make you feel special and happy ALWAYS..
+        Sometimes mudiyadhu but that's okay, ellame part of life dhana THANGOO..
         <br>
         I hope this year (or maybe I) will bring you wonderful memories, exciting things, and plenty of reasons to be happy.
 
         <br>
 
-        Have a really, really wonderful birthday. ❤️
+        Have a really, really attagaasamaana birthday THANGA PULLA.. ❤️
 
         <br>
-        And don't forget to ask for your birthday gift from the person standing/sitting right in front of you!!
+        ⚠️ And don't forget to ask for your birthday gift from the person standing/sitting right in front of YOU!!
 
         <br>
 
@@ -2383,11 +2385,8 @@ elif st.session_state.page == "final":
             font-size:16px;
             line-height:1.8;
         ">
-
         🌸 Some wishes are better left as little memories. ✨
-
         <br>
-
         And this one was meant just for you.
 
         </div>
