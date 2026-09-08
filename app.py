@@ -1233,7 +1233,9 @@ if st.session_state.page == "password":
         ">
 
         Before you enter, there's just one tiny problem...
+        <br>
         <b>You need the secret password.</b>
+        (Kutty change in password)
 
         </p>
 
