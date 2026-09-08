@@ -1296,12 +1296,11 @@ if st.session_state.page == "password":
 
             💡 <b>HINT 1</b>
 
-            <br><br>
+            <br>
+            <b>2 letters</b>
+            and <b>8 digits</b>
 
-            It contains <b>2 letters/characters</b>
-            and <b>8 digits</b>.
-
-            I know you guessed it. 😌
+            I hope you guessed it. 😌
 
             </div>
             """,
@@ -1321,11 +1320,11 @@ if st.session_state.page == "password":
 
             💡 <b>HINT 2</b>
 
-            <br><br>
-
-            Seriously!! You want the second hint?? Thats bad!!. 👀
-
-            <b> Laptop PIN.</b> 💻
+            <br>
+            Tejesh..
+            <br>
+            Seriously!! Second hint?? Thats bad!! 👀
+            <b> Laptop PIN</b> 💻
 
             </div>
             """,
@@ -1342,14 +1341,14 @@ if st.session_state.page == "password":
             ">
 
             Okay... you have used BOTH hints.
-            I'm slightly disappointed now. 😑😂
+            I'm slightly.. illa rombave disappointed now. 😑😂
 
             </div>
             """,
             unsafe_allow_html=True
         )
 
-        if st.button("🚨 I give up — Reveal"):
+        if st.button("🚨 I give up — Reveal (Don't even think of this)"):
 
             st.session_state.show_reveal = True
 
@@ -1376,9 +1375,11 @@ if st.session_state.page == "password":
 
             <div class="final-message">
 
-            I was going to make you work for it... 😂
+            You didn't find the password.. Irukattum.. Vecchikuren Ungla..😂
 
-            <br><br>
+            <br>
+            ANGRY MODE - ON
+            <br>
 
             But fine.
 
@@ -1388,7 +1389,7 @@ if st.session_state.page == "password":
 
             <br><br>
 
-            Just have an absolutely wonderful birthday! ❤️
+            Just have a wonderful birthday! ❤️
 
             <br><br>
 
