@@ -1222,7 +1222,7 @@ if st.session_state.page == "password":
             text-align:center;
             font-family:'Playfair Display', serif;
         ">
-        Hey Brightuuuu..!!
+        Hey THANGA PULLA..!!
         </h2>
 
         <p style="
@@ -1231,7 +1231,6 @@ if st.session_state.page == "password":
             font-size:18px;
             line-height:1.8;
         ">
-        
         Before you enter, there's just one tiny problem...
         <br>
         <b>You need the secret password.</b>
